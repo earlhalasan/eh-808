@@ -1,7 +1,7 @@
 const sequenceList = [
   {
     id: 0,
-    title: "Pulse",
+    title: "House (120-128 BPM)",
     noteCount: 16,
     trackList: [
       {
@@ -12,7 +12,7 @@ const sequenceList = [
       {
         title: "Snare",
         soundFile: "snare",
-        onNotes: [],
+        onNotes: [4, 12],
       },
       {
         title: "Open Hat",
@@ -22,7 +22,7 @@ const sequenceList = [
       {
         title: "Closed Hat",
         soundFile: "hh_closed",
-        onNotes: [],
+        onNotes: [2, 6, 10, 14],
       },
       {
         title: "Tom",
@@ -33,18 +33,18 @@ const sequenceList = [
   },
   {
     id: 1,
-    title: "Driving thump",
+    title: "Reggaeton (90-98 BPM)",
     noteCount: 16,
     trackList: [
       {
         title: "Kick",
         soundFile: "kick",
-        onNotes: [0, 2, 4, 6, 8, 10, 12, 14],
+        onNotes: [0, 4, 8, 12],
       },
       {
         title: "Snare",
         soundFile: "snare",
-        onNotes: [],
+        onNotes: [3, 6, 9, 11, 14],
       },
       {
         title: "Open Hat",
@@ -54,19 +54,24 @@ const sequenceList = [
       {
         title: "Closed Hat",
         soundFile: "hh_closed",
+        onNotes: [0, 2, 4, 6, 7, 10, 12, 14],
+      },
+      {
+        title: "Tom",
+        soundFile: "tom",
         onNotes: [],
       },
     ],
   },
   {
     id: 2,
-    title: "Smooth Backbeat",
+    title: "Hotline Bling (65-75 BPM)",
     noteCount: 16,
     trackList: [
       {
         title: "Kick",
         soundFile: "kick",
-        onNotes: [0, 2, 8, 10, 14],
+        onNotes: [0, 2, 7, 9, 10, 13, 15],
       },
       {
         title: "Snare",
@@ -81,61 +86,12 @@ const sequenceList = [
       {
         title: "Closed Hat",
         soundFile: "hh_closed",
+        onNotes: [0, 2, 4, 6, 8, 10, 12, 14],
+      },
+      {
+        title: "Tom",
+        soundFile: "tom",
         onNotes: [],
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Boom Chuck",
-    noteCount: 16,
-    trackList: [
-      {
-        title: "Kick",
-        soundFile: "kick",
-        onNotes: [0, 4, 8, 12],
-      },
-      {
-        title: "Snare",
-        soundFile: "snare",
-        onNotes: [2, 6, 10, 14],
-      },
-      {
-        title: "Open Hat",
-        soundFile: "hh_open",
-        onNotes: [],
-      },
-      {
-        title: "Closed Hat",
-        soundFile: "hh_closed",
-        onNotes: [],
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "Transporter",
-    noteCount: 16,
-    trackList: [
-      {
-        title: "Kick",
-        soundFile: "kick",
-        onNotes: [0, 1, 2, 3, 6, 8, 10, 13, 14, 15],
-      },
-      {
-        title: "Snare",
-        soundFile: "snare",
-        onNotes: [4, 12],
-      },
-      {
-        title: "Open Hat",
-        soundFile: "hh_open",
-        onNotes: [],
-      },
-      {
-        title: "Closed Hat",
-        soundFile: "hh_closed",
-        onNotes: [0, 4, 8, 12],
       },
     ],
   },

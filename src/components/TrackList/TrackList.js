@@ -1,6 +1,6 @@
 import React, { useContext, memo } from "react";
 import { Context } from "../../hooks/useStore";
-import { soundFiles } from "../../constants/config";
+import { soundFiles } from "../../constants/seed";
 import Track from "../Track/Track";
 
 const TrackList = ({ currentStepID }) => {

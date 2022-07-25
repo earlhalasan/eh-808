@@ -1,5 +1,5 @@
 import React, { useReducer, createContext } from "react";
-import { sequenceList } from "../constants/config";
+import { sequenceList } from "../constants/seed";
 
 const Context = createContext({
   sequence: {},

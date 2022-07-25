@@ -1,5 +1,5 @@
 import React, { useContext, memo } from "react";
-import { sequenceList } from "../../constants/config";
+import { sequenceList } from "../../constants/seed";
 import { Context } from "../../hooks/useStore";
 import "./Toolbar.css";
 
@@ -37,21 +37,6 @@ const ToolBar = ({
   return (
     <nav className="toolbar">
       <button
-        className="form_element button_stop"
-        onClick={stopPlayback}
-        aria-label="Stop"
-      >
-        <svg width="14" height="14" viewBox="0 0 14 14">
-          <rect
-            className="button_icon_path"
-            x="2"
-            y="2"
-            width="10"
-            height="10"
-          />
-        </svg>
-      </button>
-      <button
         className="form_element button_play_pause"
         onClick={togglePlayback}
         aria-label="Play / Pause"
@@ -73,6 +58,21 @@ const ToolBar = ({
               d="M11,10 L18,13.74 18,22.28 11,26 M18,13.74 L26,18 26,18 18,22.28"
             />
           )}
+        </svg>
+      </button>
+      <button
+        className="form_element button_stop"
+        onClick={stopPlayback}
+        aria-label="Stop"
+      >
+        <svg width="14" height="14" viewBox="0 0 14 14">
+          <rect
+            className="button_icon_path"
+            x="2"
+            y="2"
+            width="10"
+            height="10"
+          />
         </svg>
       </button>
       <input
