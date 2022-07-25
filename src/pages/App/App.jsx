@@ -8,6 +8,10 @@ import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
 import useStyles from "../../hooks/useStyles";
 import useTimer from "../../hooks/useTimer";
+import ToolBar from "../../components/Toolbar/Toolbar";
+import Steps from "../../components/Steps/Steps";
+import PlayHead from "../../components/PlayHead/PlayHead";
+import TrackList from "../../components/TrackList/TrackList";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -65,15 +69,17 @@ export default function App() {
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
-          <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+          <div>
             <ToolBar {...toolBarProps} />
             <Steps count={totalSteps} />
             <div>
               <PlayHead {...playHeadProps} />
               <TrackList {...trackListProps} />
             </div>
+          </div>
+          <Routes>
+            <Route path="/orders/new" element={<NewOrderPage />} />
+            <Route path="/orders" element={<OrderHistoryPage />} />
           </Routes>
         </>
       ) : (
