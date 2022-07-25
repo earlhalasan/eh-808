@@ -13,6 +13,7 @@ import Steps from "../../components/Steps/Steps";
 import PlayHead from "../../components/PlayHead/PlayHead";
 import TrackList from "../../components/TrackList/TrackList";
 import { Provider } from "../../hooks/useStore";
+import LoopIndexPage from "../LoopIndexPage/LoopIndexPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -88,6 +89,7 @@ export default function App() {
           <Routes>
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route path="/loops" element={<LoopIndexPage />} />
           </Routes>
         </>
       ) : (
