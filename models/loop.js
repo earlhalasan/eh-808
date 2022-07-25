@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 const loopSchema = new Schema({
   title: { type: String, required: true },
-  noteCount: 16,
+  noteCount: Number,
   trackList: [
     {
       title: "Kick",

@@ -65,7 +65,7 @@ const sequenceList = [
   },
   {
     id: 2,
-    title: "Hotline Bling (65-75 BPM)",
+    title: "Hip-Hop (65-75 BPM)",
     noteCount: 16,
     trackList: [
       {
