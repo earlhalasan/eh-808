@@ -12,6 +12,7 @@ import ToolBar from "../../components/Toolbar/Toolbar";
 import Steps from "../../components/Steps/Steps";
 import PlayHead from "../../components/PlayHead/PlayHead";
 import TrackList from "../../components/TrackList/TrackList";
+import { Provider } from "../../hooks/useStore";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -19,49 +20,51 @@ export default function App() {
   const baseBPMPerOneSecond = 60;
   const stepsPerBar = 16;
   const beatsPerBar = 4;
-  const barsPerLoop = 1;
-  const totalSteps = stepsPerBar * barsPerLoop;
-  const totalBeats = beatsPerBar * barsPerLoop;
+  const barsPerSequence = 1;
+  const totalSteps = stepsPerBar * barsPerSequence;
+  const totalBeats = beatsPerBar * barsPerSequence;
 
-  const [BPM, setBPM] = useState(100);
+  const [BPM, setBPM] = useState(128);
   const [startTime, setStartTime] = useState(null);
-  const [pastLapsedTime, setPastLapsedTime] = useState(0);
-  const [currentStep, setCurrentStep] = useState(null);
-  const [getNotesWidth] = useStyles(totalSteps);
+  const [pastLapsedTime, setPastLapse] = useState(0);
+  const [currentStepID, setCurrentStep] = useState(null);
+  const [getNotesAreaWidthInPixels] = useStyles(totalSteps);
 
-  const notesWidth = getNotesWidth(totalSteps);
-  const timePerLoop = (baseBPMPerOneSecond / BPM) * 1000 * totalBeats;
-  const timePerStep = timePerLoop / totalSteps;
-  const isLoopPlaying = startTime !== null;
-  const playerTime = useTimer(isLoopPlaying);
-  const lapsedTime = isLoopPlaying ? Math.max(0, playerTime - startTime) : 0;
+  const notesAreaWidthInPixels = getNotesAreaWidthInPixels(totalSteps);
+  const timePerSequence = (baseBPMPerOneSecond / BPM) * 1000 * totalBeats;
+  const timePerStep = timePerSequence / totalSteps;
+  const isSequencePlaying = startTime !== null;
+  const playerTime = useTimer(isSequencePlaying);
+  const lapsedTime = isSequencePlaying
+    ? Math.max(0, playerTime - startTime)
+    : 0;
   const totalLapsedTime = pastLapsedTime + lapsedTime;
 
   useEffect(() => {
-    if (isLoopPlaying) {
+    if (isSequencePlaying) {
       setCurrentStep(Math.floor(totalLapsedTime / timePerStep) % totalSteps);
     } else {
       setCurrentStep(null);
     }
-  }, [isLoopPlaying, totalLapsedTime, timePerStep, totalSteps]);
+  }, [isSequencePlaying, timePerStep, totalLapsedTime, totalSteps]);
 
   const toolBarProps = {
     setStartTime,
-    setPastLapsedTime,
+    setPastLapse,
     setBPM,
-    isLoopPlaying,
+    isSequencePlaying,
     startTime,
     BPM,
   };
 
   const playHeadProps = {
-    notesWidth,
-    timePerLoop,
+    notesAreaWidthInPixels,
+    timePerSequence,
     totalLapsedTime,
   };
 
   const trackListProps = {
-    currentStep,
+    currentStepID,
   };
 
   return (
@@ -69,14 +72,19 @@ export default function App() {
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
-          <div>
-            <ToolBar {...toolBarProps} />
-            <Steps count={totalSteps} />
-            <div>
-              <PlayHead {...playHeadProps} />
-              <TrackList {...trackListProps} />
-            </div>
-          </div>
+          <Provider>
+            <main className="app">
+              <header className="app_header">
+                <h1 className="app_title">TR-808</h1>
+                <ToolBar {...toolBarProps} />
+              </header>
+              <Steps count={totalSteps} />
+              <div className="app_content">
+                <PlayHead {...playHeadProps} />
+                <TrackList {...trackListProps} />
+              </div>
+            </main>
+          </Provider>
           <Routes>
             <Route path="/orders/new" element={<NewOrderPage />} />
             <Route path="/orders" element={<OrderHistoryPage />} />

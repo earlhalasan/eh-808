@@ -27,7 +27,7 @@ const defaults = {
 const noteWidthFull = defaults.__note_width + defaults.__note_margin_horz * 2;
 const noteHeightFull = defaults.__note_height + defaults.__note_margin_vert * 2;
 
-const getNotesWidth = (totalSteps) =>
+const getNotesAreaWidthInPixels = (totalSteps) =>
   noteWidthFull * totalSteps - defaults.__play_head_width / 2;
 
 const setProperty = (key, value) =>
@@ -88,7 +88,7 @@ const useStyles = (totalSteps) => {
   useEffect(() => {
     setStyles(totalSteps);
   }, [totalSteps]);
-  return [getNotesWidth];
+  return [getNotesAreaWidthInPixels];
 };
 
 export default useStyles;

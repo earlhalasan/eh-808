@@ -6,7 +6,7 @@ const useSound = (soundFilePath) => {
   const play = useCallback(() => sound.play(), [sound]);
 
   useEffect(() => {
-    setSound(new sound(soundFilePath));
+    setSound(new Sound(soundFilePath));
   }, [soundFilePath]);
 
   return [play];

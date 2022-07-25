@@ -6,9 +6,9 @@ const Track = ({
   trackID,
   currentStepID,
   title,
+  noteCount,
   onNotes,
   soundFilePath,
-  noteCount,
 }) => {
   const [play] = useSound(soundFilePath);
 
@@ -19,8 +19,8 @@ const Track = ({
 
     return (
       <Note
-        trackID={trackID}
         key={i}
+        trackID={trackID}
         stepID={stepID}
         isNoteOn={isNoteOn}
         isNoteOnCurrentStep={isNoteOnCurrentStep}
@@ -31,7 +31,7 @@ const Track = ({
 
   return (
     <div className="track">
-      <header className="track-header">{title}</header>
+      <header className="track_title">{title}</header>
       <main className="track_notes">{notes}</main>
     </div>
   );

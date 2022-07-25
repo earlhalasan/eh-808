@@ -13,12 +13,13 @@ const TrackList = ({ currentStepID }) => {
 
     return (
       <Track
-        key={trackID}
-        trackID={trackID}
+        key={title}
+        trackID={+trackID}
+        currentStepID={currentStepID}
         title={title}
+        noteCount={noteCount}
         onNotes={onNotes}
         soundFilePath={soundFilePath}
-        currentStepID={currentStepID}
       />
     );
   });

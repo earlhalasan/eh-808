@@ -1,20 +1,25 @@
 import React, { useRef, useLayoutEffect, memo } from "react";
 
-const PlayHead = ({ notesWidth, timePerLoop, totalLapsedTime }) => {
-  const Playhead = useRef(null);
+const PlayHead = ({
+  notesAreaWidthInPixels,
+  timePerSequence,
+  totalLapsedTime,
+}) => {
+  const PlayHead = useRef(null);
 
   useLayoutEffect(() => {
-    let progress = Math.min((totalLapsedTime % timePerLoop) / timePerLoop, 1);
+    let progress = Math.min(
+      (totalLapsedTime % timePerSequence) / timePerSequence,
+      1
+    );
 
-    Playhead.current.style.transform =
-      "translate3d(" + (progress * notesWidth).toFixed(2) + "px, 0, 0px)";
-  }, [totalLapsedTime, timePerLoop, notesWidth]);
+    PlayHead.current.style.transform =
+      "translate3d(" +
+      (progress * notesAreaWidthInPixels).toFixed(2) +
+      "px, 0, 0px)";
+  }, [notesAreaWidthInPixels, timePerSequence, totalLapsedTime]);
 
-  return (
-    <div className="play_head" ref={PlayHead}>
-      {" "}
-    </div>
-  );
+  return <div className="play_head" ref={PlayHead}></div>;
 };
 
 export default memo(PlayHead);
