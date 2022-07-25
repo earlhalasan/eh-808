@@ -1,4 +1,5 @@
 import React from "react";
+import "./Steps.css";
 
 const Steps = ({ count = 0 }) => {
   let content = [...Array(count)].map((el, i) => (

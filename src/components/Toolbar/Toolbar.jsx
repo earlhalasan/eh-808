@@ -1,6 +1,7 @@
 import React, { useContext, memo } from "react";
 import { sequenceList } from "../../constants/config";
 import { Context } from "../../hooks/useStore";
+import "./Toolbar.css";
 
 const ToolBar = ({
   setStartTime,

@@ -1,4 +1,5 @@
 import React, { useRef, useLayoutEffect, memo } from "react";
+import "./PlayHead.css";
 
 const PlayHead = ({
   notesAreaWidthInPixels,
