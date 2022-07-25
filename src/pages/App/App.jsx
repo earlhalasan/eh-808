@@ -7,6 +7,7 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
 import useStyles from "../../hooks/useStyles";
+import useTimer from "../../hooks/useTimer";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
