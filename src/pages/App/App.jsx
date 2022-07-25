@@ -6,6 +6,7 @@ import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
+import useStyles from "../../hooks/useStyles";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
