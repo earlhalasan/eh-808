@@ -75,12 +75,12 @@ export default function App() {
           <Provider>
             <main className="app">
               <header className="app_header">
-                <h1 className="app_title">TR-808</h1>
+                <h1 className="app_title">EH-808</h1>
                 <ToolBar {...toolBarProps} />
               </header>
               <Steps count={totalSteps} />
               <div className="app_content">
-                <PlayHead {...playHeadProps} />
+                {/* <PlayHead {...playHeadProps} /> */}
                 <TrackList {...trackListProps} />
               </div>
             </main>

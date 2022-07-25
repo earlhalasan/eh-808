@@ -24,6 +24,11 @@ const sequenceList = [
         soundFile: "hh_closed",
         onNotes: [],
       },
+      {
+        title: "Tom",
+        soundFile: "tom",
+        onNotes: [],
+      },
     ],
   },
   {
