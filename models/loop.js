@@ -6,28 +6,28 @@ const loopSchema = new Schema({
   noteCount: Number,
   trackList: [
     {
-      title: "Kick",
-      soundFile: "kick",
+      title: String,
+      soundFile: String,
       onNotes: [],
     },
     {
-      title: "Snare",
-      soundFile: "snare",
+      title: String,
+      soundFile: String,
       onNotes: [],
     },
     {
-      title: "Open Hat",
-      soundFile: "hh_open",
+      title: String,
+      soundFile: String,
       onNotes: [],
     },
     {
-      title: "Closed Hat",
-      soundFile: "hh_closed",
+      title: String,
+      soundFile: String,
       onNotes: [],
     },
     {
-      title: "Tom",
-      soundFile: "tom",
+      title: String,
+      soundFile: String,
       onNotes: [],
     },
   ],

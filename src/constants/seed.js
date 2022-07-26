@@ -95,6 +95,38 @@ const sequenceList = [
       },
     ],
   },
+  {
+    id: 3,
+    title: "Drum and Bass (88-90 BPM)",
+    noteCount: 16,
+    trackList: [
+      {
+        title: "Kick",
+        soundFile: "kick",
+        onNotes: [0, 5, 7, 9, 13],
+      },
+      {
+        title: "Snare",
+        soundFile: "snare",
+        onNotes: [2, 6, 10, 14],
+      },
+      {
+        title: "Open Hat",
+        soundFile: "hh_open",
+        onNotes: [],
+      },
+      {
+        title: "Closed Hat",
+        soundFile: "hh_closed",
+        onNotes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+      },
+      {
+        title: "Tom",
+        soundFile: "tom",
+        onNotes: [],
+      },
+    ],
+  },
 ];
 
 const soundFiles = {

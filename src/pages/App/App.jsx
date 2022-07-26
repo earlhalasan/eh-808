@@ -14,6 +14,7 @@ import PlayHead from "../../components/PlayHead/PlayHead";
 import TrackList from "../../components/TrackList/TrackList";
 import { Provider } from "../../hooks/useStore";
 import LoopIndexPage from "../LoopIndexPage/LoopIndexPage";
+import GenreIndexPage from "../GenreIndexPage/GenreIndexPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -87,9 +88,8 @@ export default function App() {
             </main>
           </Provider>
           <Routes>
-            <Route path="/orders/new" element={<NewOrderPage />} />
-            <Route path="/orders" element={<OrderHistoryPage />} />
             <Route path="/loops" element={<LoopIndexPage />} />
+            <Route path="/genres" element={<GenreIndexPage />} />
           </Routes>
         </>
       ) : (
