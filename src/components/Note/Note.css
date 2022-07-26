@@ -9,6 +9,7 @@
   margin-left: var(--note-margin-horz);
   margin-right: var(--note-margin-horz);
   cursor: pointer;
+  border-radius: 8px;
 }
 
 .note.on {
