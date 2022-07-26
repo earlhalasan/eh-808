@@ -18,6 +18,7 @@ const Track = ({
     const isNoteOnCurrentStep = currentStepID === i;
     const stepID = i;
 
+    // Renders grid
     return (
       <Note
         key={i}
@@ -30,6 +31,7 @@ const Track = ({
     );
   });
 
+  // Renders track name and grid
   return (
     <div className="track">
       <header className="track_title">{title}</header>
@@ -38,4 +40,5 @@ const Track = ({
   );
 };
 
+// in place of export default function
 export default memo(Track);

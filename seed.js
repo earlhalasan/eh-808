@@ -134,6 +134,38 @@ const Loop = require("./models/loop");
         },
       ],
     },
+    {
+      id: 4,
+      title: "4 on the floor",
+      noteCount: 16,
+      trackList: [
+        {
+          title: "Kick",
+          soundFile: "kick",
+          onNotes: [0, 4, 8, 12],
+        },
+        {
+          title: "Snare",
+          soundFile: "snare",
+          onNotes: [],
+        },
+        {
+          title: "Open Hat",
+          soundFile: "hh_open",
+          onNotes: [],
+        },
+        {
+          title: "Closed Hat",
+          soundFile: "hh_closed",
+          onNotes: [],
+        },
+        {
+          title: "Tom",
+          soundFile: "tom",
+          onNotes: [],
+        },
+      ],
+    },
   ]);
 
   process.exit();

@@ -22,7 +22,7 @@ async function create(req, res) {
     const newLoop = await Loop.create(req.body);
     const loopList = await Loop.find({});
     loopList.push(newLoop);
-    await catList.save();
+    await loopList.save();
   } catch (e) {
     res.status(400).json(e);
   }
@@ -38,7 +38,7 @@ async function deleteLoop(req, res) {
 }
 
 async function editLoop(req, res) {
-  const loopList = await Category.findByIdAndUpdate(
+  const loopList = await Loop.findByIdAndUpdate(
     { _id: req.params.id },
     { title: req.body.title }
   );
