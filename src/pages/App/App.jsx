@@ -13,10 +13,12 @@ import TrackList from "../../components/TrackList/TrackList";
 import { Provider } from "../../hooks/useStore";
 import LoopIndexPage from "../LoopIndexPage/LoopIndexPage";
 import GenreIndexPage from "../GenreIndexPage/GenreIndexPage";
+import * as loopAPI from "../../utilities/loops-api";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
 
+  // BPM set up
   const baseBPMPerOneSecond = 60;
   const stepsPerBar = 16;
   const beatsPerBar = 4;
@@ -24,6 +26,7 @@ export default function App() {
   const totalSteps = stepsPerBar * barsPerSequence;
   const totalBeats = beatsPerBar * barsPerSequence;
 
+  // Hooks for drum machine
   const [BPM, setBPM] = useState(120);
   const [startTime, setStartTime] = useState(null);
   const [pastLapsedTime, setPastLapse] = useState(0);
@@ -40,6 +43,10 @@ export default function App() {
     : 0;
   const totalLapsedTime = pastLapsedTime + lapsedTime;
 
+  // Hooks for loop
+  const [allLoops, setAllLoops] = useState([]);
+  const [updated, setUpdated] = useState(false);
+
   useEffect(() => {
     if (isSequencePlaying) {
       setCurrentStep(Math.floor(totalLapsedTime / timePerStep) % totalSteps);
@@ -47,6 +54,21 @@ export default function App() {
       setCurrentStep(null);
     }
   }, [isSequencePlaying, timePerStep, totalLapsedTime, totalSteps]);
+
+  // get loops
+  useEffect(
+    function () {
+      async function getLoops() {
+        const loops = await loopAPI.getAll();
+        // console.log(loops);
+        setAllLoops(loops);
+
+        console.log(allLoops);
+      }
+      getLoops();
+    },
+    [updated]
+  );
 
   const toolBarProps = {
     setStartTime,
@@ -86,7 +108,22 @@ export default function App() {
             </main>
           </Provider>
           <Routes>
-            <Route path="/loops" element={<LoopIndexPage />} />
+            {/* <Route path="/loops" element={<LoopIndexPage />} /> */}
+            {allLoops ? (
+              <Route
+                path="/loops"
+                element={
+                  <LoopIndexPage
+                    allLoops={allLoops}
+                    setAllLoops={setAllLoops}
+                    updated={updated}
+                    setUpdated={setUpdated}
+                  />
+                }
+              />
+            ) : (
+              "loading"
+            )}
             <Route path="/genres" element={<GenreIndexPage />} />
           </Routes>
         </>
