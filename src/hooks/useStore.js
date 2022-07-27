@@ -1,5 +1,6 @@
 import React, { useReducer, createContext, useEffect } from "react";
 import { sequenceList } from "../constants/seed";
+import { allLoops } from "../pages/App/App";
 
 const Context = createContext({
   sequence: {},
@@ -11,7 +12,7 @@ const appReducer = (state, action) => {
   switch (action.type) {
     case "SET_SEQUENCE":
       return {
-        ...sequenceList.find((seq) => seq.id === action.value),
+        ...allLoops.find((seq) => seq.id === action.value),
       };
     case "SET_ON_NOTES":
       let newTrackList = state.trackList.map((track, trackID) => {

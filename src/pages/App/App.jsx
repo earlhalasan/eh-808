@@ -28,7 +28,7 @@ export default function App() {
   const totalBeats = beatsPerBar * barsPerSequence;
 
   // Hooks for drum machine
-  const [BPM, setBPM] = useState(120);
+  const [BPM, setBPM] = useState(90);
   const [startTime, setStartTime] = useState(null);
   const [pastLapsedTime, setPastLapse] = useState(0);
   const [currentStepID, setCurrentStep] = useState(null);
@@ -97,6 +97,14 @@ export default function App() {
   //       return state;
   //   }
   // };
+
+  function loopFinder(a) {
+    let r = allLoops.filter((loop) => loop._id === a);
+    console.log(allLoops);
+    console.log(r);
+    console.log(r[0].title);
+    return r[0].title;
+  }
 
   const toolBarProps = {
     setStartTime,
