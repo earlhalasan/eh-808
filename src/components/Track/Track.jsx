@@ -20,23 +20,27 @@ const Track = ({
 
     // Renders grid
     return (
-      <Note
-        key={i}
-        trackID={trackID}
-        stepID={stepID}
-        isNoteOn={isNoteOn}
-        isNoteOnCurrentStep={isNoteOnCurrentStep}
-        play={play}
-      />
+      <>
+        <Note
+          key={i}
+          trackID={trackID}
+          stepID={stepID}
+          isNoteOn={isNoteOn}
+          isNoteOnCurrentStep={isNoteOnCurrentStep}
+          play={play}
+        />
+      </>
     );
   });
 
   // Renders track name and grid
   return (
-    <div className="track">
-      <header className="track_title">{title}</header>
-      <main className="track_notes">{notes}</main>
-    </div>
+    <>
+      <div className="track">
+        <header className="track_title">{title}</header>
+        <main className="track_notes">{notes}</main>
+      </div>
+    </>
   );
 };
 

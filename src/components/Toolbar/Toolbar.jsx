@@ -95,7 +95,7 @@ const ToolBar = ({
         onChange={(e) => selectSequence(+e.target.value)}
         aria-label="Select sequence"
       >
-        {sequenceList.map((seq) => {
+        {allLoops.map((seq) => {
           return (
             <option key={seq.id} value={seq.id}>
               {seq.title}

@@ -22,7 +22,11 @@ const Note = ({ trackID, stepID, isNoteOn, isNoteOnCurrentStep, play }) => {
     play();
   };
 
-  return <div className={noteClassNames} onClick={noteClicked} />;
+  return (
+    <>
+      <div className={noteClassNames} onClick={noteClicked} />
+    </>
+  );
 };
 
 export default memo(Note);

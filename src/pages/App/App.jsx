@@ -10,7 +10,7 @@ import ToolBar from "../../components/Toolbar/Toolbar";
 import Steps from "../../components/Steps/Steps";
 import PlayHead from "../../components/PlayHead/PlayHead";
 import TrackList from "../../components/TrackList/TrackList";
-import { Provider } from "../../hooks/useStore";
+import { Provider, Context } from "../../hooks/useStore";
 import LoopIndexPage from "../LoopIndexPage/LoopIndexPage";
 import GenreIndexPage from "../GenreIndexPage/GenreIndexPage";
 import * as loopAPI from "../../utilities/loops-api";
@@ -181,7 +181,11 @@ export default function App() {
               <Steps count={totalSteps} />
               <div className="app_content">
                 {/* <PlayHead {...playHeadProps} /> */}
-                <TrackList {...trackListProps} />
+                <TrackList
+                  {...trackListProps}
+                  setUpdated={setUpdated}
+                  allLoops={allLoops}
+                />
               </div>
             </main>
           </Provider>
