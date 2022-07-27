@@ -77,7 +77,7 @@ export default function LoopList({ allLoops, setAllLoops, setUpdated }) {
                   <>
                     <div className="" id="" key={idx}>
                       {/* <Link to={`/loops/${loop._id}`} style={viewMode}> */}
-                      {/* <a className="">{loopFinder(loop.category._id)}</a> */}
+                      {/* <a className="">{loopFinder(loop._id)}</a> */}
                       <p className="">{loop.title}</p>
                       <button
                         value={loop._id}
