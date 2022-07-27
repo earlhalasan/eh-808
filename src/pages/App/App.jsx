@@ -14,6 +14,7 @@ import { Provider } from "../../hooks/useStore";
 import LoopIndexPage from "../LoopIndexPage/LoopIndexPage";
 import GenreIndexPage from "../GenreIndexPage/GenreIndexPage";
 import * as loopAPI from "../../utilities/loops-api";
+import { sequenceList } from "../../constants/seed";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -69,6 +70,33 @@ export default function App() {
     },
     [updated]
   );
+
+  // attempt to refactor from useStore
+  // const appReducer = (state, action) => {
+  //   switch (action.type) {
+  //     case "SET_SEQUENCE":
+  //       return {
+  //         ...sequenceList.find((seq) => seq.id === action.value),
+  //       };
+  //     case "SET_ON_NOTES":
+  //       let newTrackList = state.trackList.map((track, trackID) => {
+  //         if (action.trackID === trackID) {
+  //           return {
+  //             ...track,
+  //             onNotes: action.value,
+  //           };
+  //         } else {
+  //           return track;
+  //         }
+  //       });
+  //       return {
+  //         ...state,
+  //         trackList: newTrackList,
+  //       };
+  //     default:
+  //       return state;
+  //   }
+  // };
 
   const toolBarProps = {
     setStartTime,

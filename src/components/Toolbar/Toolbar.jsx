@@ -91,12 +91,12 @@ const ToolBar = ({
       <select
         className="form_element select_sequence"
         value={selectedSequenceID}
-        onChange={(e) => selectSequence(e.target.value)}
+        onChange={(e) => selectSequence(+e.target.value)}
         aria-label="Select sequence"
       >
-        {allLoops.map((seq) => {
+        {sequenceList.map((seq) => {
           return (
-            <option key={seq._id} value={seq._id}>
+            <option key={seq.id} value={seq.id}>
               {seq.title}
             </option>
           );
