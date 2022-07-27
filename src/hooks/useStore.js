@@ -12,7 +12,7 @@ const appReducer = (state, action) => {
   switch (action.type) {
     case "SET_SEQUENCE":
       return {
-        ...allLoops.find((seq) => seq.id === action.value),
+        ...sequenceList.find((seq) => seq.id === action.value),
       };
     case "SET_ON_NOTES":
       let newTrackList = state.trackList.map((track, trackID) => {

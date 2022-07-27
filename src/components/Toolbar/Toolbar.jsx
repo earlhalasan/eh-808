@@ -17,7 +17,7 @@ const ToolBar = ({
     sequence: { id: selectedSequenceID },
     selectSequence,
   } = useContext(Context);
-  console.log(selectedSequenceID);
+  // console.log(selectedSequenceID);
 
   function togglePlayback() {
     if (isSequencePlaying) {
