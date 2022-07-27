@@ -29,9 +29,10 @@ async function sendRequest(url, method = "GET", payload = null) {
     options.headers = { "Content-Type": "application/json" };
     options.body = JSON.stringify(payload);
   }
+  console.log(url);
   const res = await fetch(url, options);
   // res.ok will be false if the status code set to 4xx in the controller action
-  console.log("sedning request");
+  console.log("sending request");
   if (res.ok) return res.json();
   console.log(res.json);
   throw new Error("Bad Request");

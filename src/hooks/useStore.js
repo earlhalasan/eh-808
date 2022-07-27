@@ -1,4 +1,4 @@
-import React, { useReducer, createContext } from "react";
+import React, { useReducer, createContext, useEffect } from "react";
 import { sequenceList } from "../constants/seed";
 
 const Context = createContext({

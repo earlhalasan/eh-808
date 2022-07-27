@@ -10,7 +10,7 @@
   justify-content: flex-end;
   align-items: center;
   /* text-transform: uppercase; */
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1rem;
   padding: var(--spacer);
   width: var(--track-title-width);

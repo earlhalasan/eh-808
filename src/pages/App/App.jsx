@@ -60,10 +60,10 @@ export default function App() {
     function () {
       async function getLoops() {
         const loops = await loopAPI.getAll();
-        // console.log(loops);
+        console.log(loops, "loops");
         setAllLoops(loops);
 
-        console.log(allLoops);
+        console.log(allLoops, "allLoops");
       }
       getLoops();
     },
@@ -77,6 +77,8 @@ export default function App() {
     isSequencePlaying,
     startTime,
     BPM,
+    allLoops,
+    setAllLoops,
   };
 
   const playHeadProps = {

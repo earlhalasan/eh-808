@@ -10,11 +10,14 @@ const ToolBar = ({
   isSequencePlaying,
   startTime,
   BPM,
+  allLoops,
+  setAllLoops,
 }) => {
   const {
     sequence: { id: selectedSequenceID },
     selectSequence,
   } = useContext(Context);
+  console.log(selectedSequenceID);
 
   function togglePlayback() {
     if (isSequencePlaying) {
@@ -88,12 +91,12 @@ const ToolBar = ({
       <select
         className="form_element select_sequence"
         value={selectedSequenceID}
-        onChange={(e) => selectSequence(+e.target.value)}
+        onChange={(e) => selectSequence(e.target.value)}
         aria-label="Select sequence"
       >
-        {sequenceList.map((seq) => {
+        {allLoops.map((seq) => {
           return (
-            <option key={seq.id} value={seq.id}>
+            <option key={seq._id} value={seq._id}>
               {seq.title}
             </option>
           );
