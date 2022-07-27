@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useReducer, createContext } from "react";
 import AuthPage from "../AuthPage/AuthPage";
 import { Routes, Route } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
@@ -71,7 +71,13 @@ export default function App() {
     [updated]
   );
 
-  // attempt to refactor from useStore
+  // ATTEMPT TO REFACTOR
+  // const Context = createContext({
+  //   sequence: {},
+  //   toggleNote: () => {},
+  //   selectSequence: () => {},
+  // });
+
   // const appReducer = (state, action) => {
   //   switch (action.type) {
   //     case "SET_SEQUENCE":
@@ -97,6 +103,40 @@ export default function App() {
   //       return state;
   //   }
   // };
+
+  // const Provider = ({ children }) => {
+  //   const [sequence, dispatch] = useReducer(appReducer, { ...sequenceList[0] });
+
+  //   const toggleNote = ({ trackID, stepID }) => {
+  //     let newOnNotes;
+  //     const onNotes = sequence.trackList[trackID].onNotes;
+
+  //     if (onNotes.indexOf(stepID) === -1) {
+  //       newOnNotes = [...onNotes, stepID];
+  //     } else {
+  //       newOnNotes = onNotes.filter((col) => col !== stepID);
+  //     }
+  //     dispatch({
+  //       type: "SET_ON_NOTES",
+  //       value: newOnNotes,
+  //       trackID,
+  //     });
+  //   };
+
+  //   const selectSequence = (sequenceID) => {
+  //     dispatch({
+  //       type: "SET_SEQUENCE",
+  //       value: sequenceID,
+  //     });
+  //   };
+
+  //   return (
+  //     <Context.Provider value={{ sequence, toggleNote, selectSequence }}>
+  //       {children}
+  //     </Context.Provider>
+  //   );
+  // };
+  // END REFACTOR ATTEMPT
 
   function loopFinder(a) {
     let r = allLoops.filter((loop) => loop._id === a);
@@ -171,3 +211,5 @@ export default function App() {
     </main>
   );
 }
+
+// export { Provider, Context };

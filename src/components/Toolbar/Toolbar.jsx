@@ -1,6 +1,7 @@
 import React, { useContext, memo } from "react";
 import { sequenceList } from "../../constants/seed";
 import { Context } from "../../hooks/useStore";
+// import { Context } from "../../pages/App/App";
 import "./Toolbar.css";
 
 const ToolBar = ({

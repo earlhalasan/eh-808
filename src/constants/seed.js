@@ -103,7 +103,7 @@ const sequenceList = [
       {
         title: "Kick",
         soundFile: "kick",
-        onNotes: [0, 5, 7, 9, 13],
+        onNotes: [0, 5, 9, 11, 13],
       },
       {
         title: "Snare",
