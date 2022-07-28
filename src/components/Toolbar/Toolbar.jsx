@@ -18,7 +18,7 @@ const ToolBar = ({
     sequence: { id: selectedSequenceID },
     selectSequence,
   } = useContext(Context);
-  // console.log(selectedSequenceID);
+  console.log(selectedSequenceID);
 
   function togglePlayback() {
     if (isSequencePlaying) {
@@ -96,6 +96,7 @@ const ToolBar = ({
         aria-label="Select sequence"
       >
         {allLoops.map((seq) => {
+          console.log(seq._id);
           return (
             <option key={seq.id} value={seq.id}>
               {seq.title}

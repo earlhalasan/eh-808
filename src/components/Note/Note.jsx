@@ -25,6 +25,7 @@ const Note = ({ trackID, stepID, isNoteOn, isNoteOnCurrentStep, play }) => {
   return (
     <>
       <div className={noteClassNames} onClick={noteClicked} />
+      {/* <button>Save</button> */}
     </>
   );
 };

@@ -18,7 +18,7 @@ const Track = ({
     const isNoteOnCurrentStep = currentStepID === i;
     const stepID = i;
 
-    // Renders grid
+    // Renders grid with note component mapped out
     return (
       <>
         <Note
@@ -39,6 +39,7 @@ const Track = ({
       <div className="track">
         <header className="track_title">{title}</header>
         <main className="track_notes">{notes}</main>
+        {/* <button>Save</button> */}
       </div>
     </>
   );

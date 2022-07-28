@@ -8,6 +8,7 @@ const TrackList = ({ currentStepID, setUpdated, allLoops }) => {
   const {
     sequence: { trackList, noteCount },
   } = useContext(Context);
+  console.log(Context);
 
   const [formData, setFormData] = useState({
     title: "",
@@ -18,7 +19,7 @@ const TrackList = ({ currentStepID, setUpdated, allLoops }) => {
 
   async function handleSubmit(evt) {
     evt.preventDefault();
-    console.log(allLoops);
+    // console.log(allLoops);
     // setAllLoops([...allLoops, formData]);
 
     loopAPI.newLoop(formData);

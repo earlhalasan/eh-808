@@ -47,6 +47,7 @@ export default function App() {
   // Hooks for loop
   const [allLoops, setAllLoops] = useState([]);
   const [updated, setUpdated] = useState(false);
+  const [selectedLoop, setSelectedLoop] = useState(null);
 
   useEffect(() => {
     if (isSequencePlaying) {
@@ -176,7 +177,11 @@ export default function App() {
             <main className="app">
               <header className="app_header">
                 <h1 className="app_title">EH-808</h1>
-                <ToolBar {...toolBarProps} />
+                <ToolBar
+                  {...toolBarProps}
+                  setAllLoops={setAllLoops}
+                  setSelectedLoop={setSelectedLoop}
+                />
               </header>
               <Steps count={totalSteps} />
               <div className="app_content">
@@ -185,6 +190,8 @@ export default function App() {
                   {...trackListProps}
                   setUpdated={setUpdated}
                   allLoops={allLoops}
+                  setAllLoops={setAllLoops}
+                  setSelectedLoop={setSelectedLoop}
                 />
               </div>
             </main>

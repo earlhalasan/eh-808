@@ -54,6 +54,7 @@ const Provider = ({ children }) => {
   };
 
   const selectSequence = (sequenceID) => {
+    console.log(sequenceID);
     dispatch({
       type: "SET_SEQUENCE",
       value: sequenceID,
