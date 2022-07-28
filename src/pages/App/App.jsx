@@ -1,7 +1,7 @@
 import "./App.css";
 import React, { useState, useEffect, useReducer, createContext } from "react";
 import AuthPage from "../AuthPage/AuthPage";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
 import useStyles from "../../hooks/useStyles";
@@ -15,6 +15,8 @@ import LoopIndexPage from "../LoopIndexPage/LoopIndexPage";
 import GenreIndexPage from "../GenreIndexPage/GenreIndexPage";
 import * as loopAPI from "../../utilities/loops-api";
 import { sequenceList } from "../../constants/seed";
+import NewOrderPage from "../NewOrderPage/NewOrderPage";
+import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
@@ -72,73 +74,6 @@ export default function App() {
     [updated]
   );
 
-  // ATTEMPT TO REFACTOR
-  // const Context = createContext({
-  //   sequence: {},
-  //   toggleNote: () => {},
-  //   selectSequence: () => {},
-  // });
-
-  // const appReducer = (state, action) => {
-  //   switch (action.type) {
-  //     case "SET_SEQUENCE":
-  //       return {
-  //         ...sequenceList.find((seq) => seq.id === action.value),
-  //       };
-  //     case "SET_ON_NOTES":
-  //       let newTrackList = state.trackList.map((track, trackID) => {
-  //         if (action.trackID === trackID) {
-  //           return {
-  //             ...track,
-  //             onNotes: action.value,
-  //           };
-  //         } else {
-  //           return track;
-  //         }
-  //       });
-  //       return {
-  //         ...state,
-  //         trackList: newTrackList,
-  //       };
-  //     default:
-  //       return state;
-  //   }
-  // };
-
-  // const Provider = ({ children }) => {
-  //   const [sequence, dispatch] = useReducer(appReducer, { ...sequenceList[0] });
-
-  //   const toggleNote = ({ trackID, stepID }) => {
-  //     let newOnNotes;
-  //     const onNotes = sequence.trackList[trackID].onNotes;
-
-  //     if (onNotes.indexOf(stepID) === -1) {
-  //       newOnNotes = [...onNotes, stepID];
-  //     } else {
-  //       newOnNotes = onNotes.filter((col) => col !== stepID);
-  //     }
-  //     dispatch({
-  //       type: "SET_ON_NOTES",
-  //       value: newOnNotes,
-  //       trackID,
-  //     });
-  //   };
-
-  //   const selectSequence = (sequenceID) => {
-  //     dispatch({
-  //       type: "SET_SEQUENCE",
-  //       value: sequenceID,
-  //     });
-  //   };
-
-  //   return (
-  //     <Context.Provider value={{ sequence, toggleNote, selectSequence }}>
-  //       {children}
-  //     </Context.Provider>
-  //   );
-  // };
-  // END REFACTOR ATTEMPT
-
   function loopFinder(a) {
     let r = allLoops.filter((loop) => loop._id === a);
     console.log(allLoops);
@@ -173,32 +108,29 @@ export default function App() {
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
-          <Provider>
-            <main className="app">
-              <header className="app_header">
-                <h1 className="app_title">EH-808</h1>
-                <ToolBar
-                  {...toolBarProps}
-                  setAllLoops={setAllLoops}
-                  setSelectedLoop={setSelectedLoop}
-                />
-              </header>
-              <Steps count={totalSteps} />
-              <div className="app_content">
-                {/* <PlayHead {...playHeadProps} /> */}
-                <TrackList
-                  {...trackListProps}
-                  setUpdated={setUpdated}
-                  allLoops={allLoops}
-                  setAllLoops={setAllLoops}
-                  setSelectedLoop={setSelectedLoop}
-                />
-              </div>
-            </main>
-          </Provider>
           <Routes>
-            {/* <Route path="/loops" element={<LoopIndexPage />} /> */}
-            {allLoops ? (
+            {/* client-side route that renders the component instance if the path matches the url in the address bar */}
+            <Route
+              path="/orders/new"
+              element={<NewOrderPage user={user} setUser={setUser} />}
+            />
+            <Route path="/orders" element={<OrderHistoryPage />} />
+            {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
+            <Route path="/*" element={<Navigate to="/orders/new" />} />
+          </Routes>
+        </>
+      ) : (
+        <AuthPage setUser={setUser} />
+      )}
+    </main>
+  );
+}
+
+{
+  /* <Route path="/loops" element={<LoopIndexPage />} /> */
+}
+{
+  /* {allLoops ? (
               <Route
                 path="/loops"
                 element={
@@ -212,15 +144,33 @@ export default function App() {
               />
             ) : (
               "loading"
-            )}
-            <Route path="/genres" element={<GenreIndexPage />} />
-          </Routes>
-        </>
-      ) : (
-        <AuthPage setUser={setUser} />
-      )}
-    </main>
-  );
+            )} */
+}
+{
+  /* <Route path="/genres" element={<GenreIndexPage />} /> */
 }
 
-// export { Provider, Context };
+{
+  /* <Provider>
+            <main className="app">
+              <header className="app_header">
+                <h1 className="app_title">EH-808</h1>
+                <ToolBar
+                  {...toolBarProps}
+                  setAllLoops={setAllLoops}
+                  setSelectedLoop={setSelectedLoop}
+                />
+              </header>
+              <Steps count={totalSteps} />
+              <div className="app_content">
+                <TrackList
+                  {...trackListProps}
+                  setUpdated={setUpdated}
+                  allLoops={allLoops}
+                  setAllLoops={setAllLoops}
+                  setSelectedLoop={setSelectedLoop}
+                />
+              </div>
+            </main>
+          </Provider> */
+}

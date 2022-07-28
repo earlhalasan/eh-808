@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import * as itemsAPI from "../../utilities/items-api";
 import * as ordersAPI from "../../utilities/orders-api";
-import "./NewOrderPage.css";
+// import "./NewOrderPage.css";
 import { Link, useNavigate } from "react-router-dom";
-import Logo from "../../components/Logo/Logo";
+// import Logo from "../../components/Logo/Logo";
 import MenuList from "../../components/MenuList/MenuList";
 import CategoryList from "../../components/CategoryList/CategoryList";
 import OrderDetail from "../../components/OrderDetail/OrderDetail";
@@ -68,7 +68,7 @@ export default function NewOrderPage({ user, setUser }) {
   return (
     <main className="NewOrderPage">
       <aside>
-        <Logo />
+        {/* <Logo /> */}
         <CategoryList
           categories={categoriesRef.current}
           activeCat={activeCat}

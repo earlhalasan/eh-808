@@ -1,4 +1,4 @@
-import "./MenuListItem.css";
+// import "./MenuListItem.css";
 
 export default function MenuListItem({ menuItem, handleAddToOrder }) {
   return (
