@@ -26,9 +26,9 @@ export default function OrderDetail({
             ORDER <span className="smaller">{order.orderId}</span>
           </span>
         ) : (
-          <span>NEW ORDER</span>
+          <span>Cart</span>
         )}
-        <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
+        {/* <span>{new Date(order.updatedAt).toLocaleDateString()}</span> */}
       </div>
       <div className="line-item-container flex-ctr-ctr flex-col scroll-y">
         {lineItems.length ? (
@@ -43,15 +43,15 @@ export default function OrderDetail({
                   onClick={handleCheckout}
                   disabled={!lineItems.length}
                 >
-                  CHECKOUT
+                  Checkout
                 </button>
               )}
-              <span>{order.totalQty}</span>
+              <span>&nbsp;{order.totalQty}</span>
               <span className="right">${order.orderTotal.toFixed(2)}</span>
             </section>
           </>
         ) : (
-          <div className="hungry">Hungry?</div>
+          <div className="hungry">Cart is empty</div>
         )}
       </div>
     </div>

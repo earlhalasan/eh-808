@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import * as itemsAPI from "../../utilities/items-api";
 import * as ordersAPI from "../../utilities/orders-api";
-// import "./NewOrderPage.css";
+import "./NewOrderPage.css";
 import { Link, useNavigate } from "react-router-dom";
 // import Logo from "../../components/Logo/Logo";
 import MenuList from "../../components/MenuList/MenuList";
@@ -66,7 +66,7 @@ export default function NewOrderPage({ user, setUser }) {
   }
 
   return (
-    <main className="NewOrderPage">
+    <main className="NewOrderPage border">
       <aside>
         {/* <Logo /> */}
         <CategoryList
@@ -75,7 +75,7 @@ export default function NewOrderPage({ user, setUser }) {
           setActiveCat={setActiveCat}
         />
         <Link to="/orders" className="button btn-sm">
-          PREVIOUS ORDERS
+          Order History
         </Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
