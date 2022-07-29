@@ -27,10 +27,11 @@ const Item = require("./models/item");
     {
       name: "Congo",
       emoji: "🪘",
-      picture:
-        "https://media.guitarcenter.com/is/image/MMGS7/443120000645000-00-720x720.jpg",
+      picture: "public/443120000645000-00-720x720.webp",
       category: categories[0],
       price: 3.95,
+      description:
+        "Smaller 6-3/4 and 8 natural rawhide heads. Kiln-dried Siam oak shells. Cuban-style steel bottoms",
     },
     { name: "Guitar", emoji: "🎸", category: categories[1], price: 14.95 },
     {
