@@ -1,35 +1,29 @@
-// import './OrderHistoryPage.css';
-import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import * as ordersAPI from "../../utilities/orders-api";
+// import './OrderHistoryPage.css';
 // import Logo from '../../components/Logo/Logo';
 import UserLogOut from "../../components/UserLogOut/UserLogOut";
-import OrderList from "../../components/OrderList/OrderList";
 import OrderDetail from "../../components/OrderDetail/OrderDetail";
+import OrderList from "../../components/OrderList/OrderList";
+import * as ordersAPI from "../../utilities/orders-api";
+import { useState, useEffect } from "react";
 
 export default function OrderHistoryPage({ user, setUser }) {
-  /*--- State --- */
   const [orders, setOrders] = useState([]);
-  const [activeOrder, setActiveOrder] = useState(null);
+  const [activeOrder, setActiveOrder] = useState(orders[0]);
 
-  /*--- Side Effects --- */
   useEffect(function () {
-    // Load previous orders (paid)
-    async function fetchOrderHistory() {
-      const orders = await ordersAPI.getOrderHistory();
+    async function getPastOrders() {
+      const orders = await ordersAPI.getOrders();
       setOrders(orders);
-      // If no orders, activeOrder will be set to null below
-      setActiveOrder(orders[0] || null);
+      setActiveOrder(orders[0]);
     }
-    fetchOrderHistory();
+    getPastOrders();
   }, []);
 
-  /*--- Event Handlers --- */
-  function handleSelectOrder(order) {
-    setActiveOrder(order);
+  function handleActiveOrder(id) {
+    setActiveOrder(orders.find((o) => o._id === id));
   }
 
-  /*--- Rendered UI --- */
   return (
     <main className="OrderHistoryPage">
       <aside>
@@ -42,7 +36,7 @@ export default function OrderHistoryPage({ user, setUser }) {
       <OrderList
         orders={orders}
         activeOrder={activeOrder}
-        handleSelectOrder={handleSelectOrder}
+        handleActiveOrder={handleActiveOrder}
       />
       <OrderDetail order={activeOrder} />
     </main>

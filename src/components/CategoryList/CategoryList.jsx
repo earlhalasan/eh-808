@@ -1,5 +1,3 @@
-// import "./CategoryList.css";
-
 export default function CategoryList({ categories, activeCat, setActiveCat }) {
   const cats = categories.map((cat) => (
     <li

@@ -2,27 +2,27 @@
 
 export default function OrderListItem({
   order,
-  isSelected,
-  handleSelectOrder,
+  activeOrder,
+  handleActiveOrder,
 }) {
   return (
     <div
-      className={`OrderListItem${isSelected ? " selected" : ""}`}
-      onClick={() => handleSelectOrder(order)}
+      className={`OrderListItem ${
+        activeOrder && activeOrder._id === order._id ? "active" : ""
+      }`}
+      onClick={() => handleActiveOrder(order._id)}
     >
       <div>
         <div>
           Order Id: <span className="smaller">{order.orderId}</span>
         </div>
         <div className="smaller">
-          {new Date(order.updatedAt).toLocaleDateString()}
+          {new Date(order.createdAt).toLocaleDateString()}
         </div>
       </div>
       <div className="align-rt">
         <div>${order.orderTotal.toFixed(2)}</div>
-        <div className="smaller">
-          {order.totalQty} Item{order.totalQty > 1 ? "s" : ""}
-        </div>
+        <div className="smaller">{order.totalQty} Items</div>
       </div>
     </div>
   );

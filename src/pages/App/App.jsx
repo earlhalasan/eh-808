@@ -60,19 +60,19 @@ export default function App() {
   }, [isSequencePlaying, timePerStep, totalLapsedTime, totalSteps]);
 
   // get loops
-  useEffect(
-    function () {
-      async function getLoops() {
-        const loops = await loopAPI.getAll();
-        console.log(loops, "loops");
-        setAllLoops(loops);
+  // useEffect(
+  //   function () {
+  //     async function getLoops() {
+  //       const loops = await loopAPI.getAll();
+  //       console.log(loops, "loops");
+  //       setAllLoops(loops);
 
-        console.log(allLoops, "allLoops");
-      }
-      getLoops();
-    },
-    [updated]
-  );
+  //       console.log(allLoops, "allLoops");
+  //     }
+  //     getLoops();
+  //   },
+  //   [updated]
+  // );
 
   function loopFinder(a) {
     let r = allLoops.filter((loop) => loop._id === a);
@@ -114,7 +114,10 @@ export default function App() {
               path="/orders/new"
               element={<NewOrderPage user={user} setUser={setUser} />}
             />
-            <Route path="/orders" element={<OrderHistoryPage />} />
+            <Route
+              path="/orders"
+              element={<OrderHistoryPage user={user} setUser={setUser} />}
+            />
             {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
             <Route path="/*" element={<Navigate to="/orders/new" />} />
           </Routes>

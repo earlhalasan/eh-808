@@ -1,9 +1,9 @@
 import { useState, useEffect, useRef } from "react";
 import * as itemsAPI from "../../utilities/items-api";
 import * as ordersAPI from "../../utilities/orders-api";
-import "./NewOrderPage.css";
+// import './NewOrderPage.css';
 import { Link, useNavigate } from "react-router-dom";
-// import Logo from "../../components/Logo/Logo";
+// import Logo from '../../components/Logo/Logo';
 import MenuList from "../../components/MenuList/MenuList";
 import CategoryList from "../../components/CategoryList/CategoryList";
 import OrderDetail from "../../components/OrderDetail/OrderDetail";
@@ -15,7 +15,6 @@ export default function NewOrderPage({ user, setUser }) {
   const [cart, setCart] = useState(null);
   // Obtain a ref object
   const categoriesRef = useRef([]);
-  // Use the navigate function to change routes programmatically
   const navigate = useNavigate();
 
   // useEffect(function() {
@@ -45,10 +44,9 @@ export default function NewOrderPage({ user, setUser }) {
   // the function running after the FIRST render
   // only
 
-  // Event Handlers
+  /*--- Event Handlers ---*/
+
   async function handleAddToOrder(itemId) {
-    // Baby Step
-    // alert(`add item: ${itemId}`);
     // 1. Call the addItemToCart function in ordersAPI, passing to it the itemId, and assign the resolved promise to a variable named cart.
     const updatedCart = await ordersAPI.addItemToCart(itemId);
     // 2. Update the cart state with the updated cart received from the server
@@ -66,7 +64,7 @@ export default function NewOrderPage({ user, setUser }) {
   }
 
   return (
-    <main className="NewOrderPage border">
+    <main className="NewOrderPage">
       <aside>
         {/* <Logo /> */}
         <CategoryList
@@ -75,7 +73,7 @@ export default function NewOrderPage({ user, setUser }) {
           setActiveCat={setActiveCat}
         />
         <Link to="/orders" className="button btn-sm">
-          Order History
+          PREVIOUS ORDERS
         </Link>
         <UserLogOut user={user} setUser={setUser} />
       </aside>

@@ -14,7 +14,7 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
             className="btn-xs"
             onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
           >
-            {lineItem.qty === 1 ? "Remove" : "-"}
+            −
           </button>
         )}
         <span>{lineItem.qty}</span>

@@ -6,7 +6,14 @@ module.exports = {
   addToCart,
   setItemQtyInCart,
   checkout,
+  index,
 };
+
+// Get all orders for a user
+async function index(req, res) {
+  const orders = await Order.find({ user: req.user._id, isPaid: true });
+  res.json(orders);
+}
 
 // A cart is the unpaid order for a user
 async function cart(req, res) {
@@ -17,8 +24,6 @@ async function cart(req, res) {
 // Add an item to the cart
 async function addToCart(req, res) {
   const cart = await Order.getCart(req.user._id);
-  // The promise resolves to the document, which we already have
-  // in the cart variable, so no need to create another variable...
   await cart.addItemToCart(req.params.id);
   res.json(cart);
 }
