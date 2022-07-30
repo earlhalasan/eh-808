@@ -65,7 +65,7 @@ export default function NewOrderPage({ user, setUser }) {
 
   return (
     <main className="NewOrderPage">
-      <aside>
+      <aside className="border-[1px] mx-3 rounded-md">
         {/* <Logo /> */}
         <CategoryList
           categories={categoriesRef.current}

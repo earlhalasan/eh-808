@@ -6,7 +6,7 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
       {/* <div className="flex-ctr-ctr">{lineItem.item.emoji}</div> */}
       <div className="flex justify-between">
         <div className="">
-          <span className="font-semibold text-lg">
+          <span className="font-semibold ">
             {lineItem.item.name} &nbsp; {lineItem.item.emoji}
           </span>
           {/* <span>{lineItem.item.price.toFixed(2)}</span> */}

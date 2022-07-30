@@ -4,7 +4,7 @@ export default function CategoryList({ categories, activeCat, setActiveCat }) {
   const cats = categories.map((cat) => (
     <li
       key={cat}
-      className={cat === activeCat ? "active" : ""}
+      className="py-1.5 text-lg font-semibold hover:bg-gray-200 px-5 rounded-md place-items-center "
       // FYI, the below will also work, but will give a warning
       // className={cat === activeCat && 'active'}
       onClick={() => setActiveCat(cat)}
@@ -12,5 +12,11 @@ export default function CategoryList({ categories, activeCat, setActiveCat }) {
       {cat}
     </li>
   ));
-  return <ul className="CategoryList">{cats}</ul>;
+  return (
+    <>
+      <div className="px-3 py-1.5">
+        <ul className="text-left">{cats}</ul>
+      </div>
+    </>
+  );
 }
