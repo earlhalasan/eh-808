@@ -124,13 +124,13 @@ a.button {
   margin: 1vmin;
   padding: 1vmin;
   color: var(--white);
-  background-color: var(--orange);
+  background-color: #003049;
   font-size: 2vmin;
   font-weight: bold;
   text-decoration: none;
   text-align: center;
   border: 0.1vmin solid var(--tan-2);
-  border-radius: 0.5vmin;
+  border-radius: 1px;
   outline: none;
   cursor: pointer;
 }

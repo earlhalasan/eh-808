@@ -1,4 +1,4 @@
-// import "./OrderDetail.css";
+// import './OrderDetail.css';
 import LineItem from "../LineItem/LineItem";
 
 // Used to display the details of any order, including the cart (unpaid order)
@@ -23,10 +23,10 @@ export default function OrderDetail({
       <div className="section-heading">
         {order.isPaid ? (
           <span>
-            ORDER <span className="smaller">{order.orderId}</span>
+            Orders <span className="smaller">{order.orderId}</span>
           </span>
         ) : (
-          <span>Cart</span>
+          <span>Orders</span>
         )}
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
@@ -51,7 +51,7 @@ export default function OrderDetail({
             </section>
           </>
         ) : (
-          <div className="hungry">Cart is empty</div>
+          <div className="hungry">Empty Cart</div>
         )}
       </div>
     </div>

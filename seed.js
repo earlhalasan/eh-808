@@ -43,7 +43,13 @@ const Item = require("./models/item");
     { name: "French Horn", emoji: "📯", category: categories[2], price: 3.95 },
     { name: "Piano", emoji: "🎹", category: categories[3], price: 7.95 },
     { name: "Accordian", emoji: "🪗", category: categories[3], price: 1.95 },
-    { name: "Microphone", emoji: "🎤", category: categories[4], price: 2.95 },
+    {
+      name: "Microphone",
+      emoji: "🎤",
+      category: categories[4],
+      price: 2.95,
+      description: "For recording",
+    },
   ]);
 
   console.log(items);

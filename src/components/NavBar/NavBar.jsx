@@ -15,9 +15,7 @@ export default function NavBar({ user, setUser }) {
     <nav>
       Welcome, {user.name}
       &nbsp; | &nbsp;
-      <Link to="/loops">Loops Index</Link>
-      &nbsp; | &nbsp;
-      <Link to="/genres">Genres Index</Link>
+      <Link to="/orders">Orders Index</Link>
       &nbsp; | &nbsp;
       <Link to="" onClick={handleLogOut}>
         Log Out

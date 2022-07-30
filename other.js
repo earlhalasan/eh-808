@@ -24,14 +24,7 @@ const Item = require("./models/item");
       category: categories[0],
       price: 6.95,
     },
-    {
-      name: "Congo",
-      emoji: "🪘",
-      picture:
-        "https://media.guitarcenter.com/is/image/MMGS7/443120000645000-00-720x720.jpg",
-      category: categories[0],
-      price: 3.95,
-    },
+    { name: "Congo", emoji: "🪘", category: categories[0], price: 3.95 },
     { name: "Guitar", emoji: "🎸", category: categories[1], price: 14.95 },
     {
       name: "Banjo",

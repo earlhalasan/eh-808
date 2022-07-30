@@ -5,6 +5,7 @@ export default function MenuListItem({ menuItem, handleAddToOrder }) {
     <div className="MenuListItem">
       <div className="emoji flex-ctr-ctr">{menuItem.emoji}</div>
       <div className="name">{menuItem.name}</div>
+      <div>{menuItem.description}</div>
       <div className="buy">
         <span>${menuItem.price.toFixed(2)}</span>
         <button
