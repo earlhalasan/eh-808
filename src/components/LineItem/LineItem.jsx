@@ -2,13 +2,21 @@
 
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
   return (
-    <div className="LineItem">
-      <div className="flex-ctr-ctr">{lineItem.item.emoji}</div>
-      <div className="flex-ctr-ctr flex-col">
-        <span className="align-ctr">{lineItem.item.name}</span>
-        <span>{lineItem.item.price.toFixed(2)}</span>
+    <div className="LineItem pb-5">
+      {/* <div className="flex-ctr-ctr">{lineItem.item.emoji}</div> */}
+      <div className="flex justify-between">
+        <div className="">
+          <span className="font-semibold text-lg">
+            {lineItem.item.name} &nbsp; {lineItem.item.emoji}
+          </span>
+          {/* <span>{lineItem.item.price.toFixed(2)}</span> */}
+        </div>
+        <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>
       </div>
-      <div className="qty" style={{ justifyContent: isPaid && "center" }}>
+      <div
+        className="text-right"
+        style={{ justifyContent: isPaid && "center" }}
+      >
         {!isPaid && (
           <button
             className="btn-xs"
@@ -27,7 +35,6 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
           </button>
         )}
       </div>
-      <div className="ext-price">${lineItem.extPrice.toFixed(2)}</div>
     </div>
   );
 }

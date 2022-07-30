@@ -2,7 +2,7 @@ import "./MenuListItem.css";
 
 export default function MenuListItem({ menuItem, handleAddToOrder }) {
   return (
-    <div className="MenuListItem">
+    <div className="MenuListItem rounded-lg mb-5">
       {/* <div className="emoji flex-ctr-ctr">{menuItem.emoji}</div> */}
       <div className="name font-semibold text-left">{menuItem.name}</div>
       <br />

@@ -19,24 +19,33 @@ export default function OrderDetail({
   ));
 
   return (
-    <div className="OrderDetail">
-      <div className="section-heading">
+    <div className="border-[1px] mx-2 p-3 rounded-lg">
+      <div className="flex justify-between items-center px-5 py-2 font-medium text-2xl bg-[#fcbf49] rounded-lg">
         {order.isPaid ? (
           <span>
-            Orders <span className="smaller">{order.orderId}</span>
+            Cart <span className="smaller">{order.orderId}</span>
           </span>
         ) : (
-          <span>Orders</span>
+          <span>Cart</span>
         )}
-        <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
+        {/* <span>{new Date(order.updatedAt).toLocaleDateString()}</span> */}
       </div>
-      <div className="line-item-container flex-ctr-ctr flex-col scroll-y">
+      <div className="px-5 py-5">
         {lineItems.length ? (
           <>
             {lineItems}
-            <section className="total">
+            <section className="text-right">
+              <div className="text-right pt-5">
+                <span>Order quantity: {order.totalQty}</span>
+              </div>
+              &nbsp;&nbsp;
+              <br />
+              <span className="font-light text-2xl">
+                Order Total: ${order.orderTotal.toFixed(2)}
+              </span>
+              <br />
               {order.isPaid ? (
-                <span className="right">TOTAL&nbsp;&nbsp;</span>
+                <span className="text-lg">TOTAL&nbsp;&nbsp;</span>
               ) : (
                 <button
                   className="btn-sm"
@@ -46,8 +55,6 @@ export default function OrderDetail({
                   Checkout
                 </button>
               )}
-              <span>{order.totalQty}</span>
-              <span className="right">${order.orderTotal.toFixed(2)}</span>
             </section>
           </>
         ) : (
