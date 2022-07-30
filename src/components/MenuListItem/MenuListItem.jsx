@@ -8,7 +8,7 @@ export default function MenuListItem({ menuItem, handleAddToOrder }) {
       <br />
       <div className="flex ">
         <img src={menuItem.image} width="300px" />
-        <div className="flex flex-col pl-2">
+        <div className="flex flex-col pl-7">
           <div className="text-left">{menuItem.description}</div>
           <br />
           <br />
