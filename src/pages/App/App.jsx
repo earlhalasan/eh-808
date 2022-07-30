@@ -1,63 +1,15 @@
 import "./App.css";
-import React, { useState, useEffect, useReducer, createContext } from "react";
+import React, { useState } from "react";
 import AuthPage from "../AuthPage/AuthPage";
 import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "../../components/NavBar/NavBar";
 import { getUser } from "../../utilities/users-service";
-import useStyles from "../../hooks/useStyles";
-import useTimer from "../../hooks/useTimer";
-import ToolBar from "../../components/Toolbar/Toolbar";
-import Steps from "../../components/Steps/Steps";
-import PlayHead from "../../components/PlayHead/PlayHead";
-import TrackList from "../../components/TrackList/TrackList";
-import { Provider, Context } from "../../hooks/useStore";
-import LoopIndexPage from "../LoopIndexPage/LoopIndexPage";
-import GenreIndexPage from "../GenreIndexPage/GenreIndexPage";
-import * as loopAPI from "../../utilities/loops-api";
-import { sequenceList } from "../../constants/seed";
 import NewOrderPage from "../NewOrderPage/NewOrderPage";
 import OrderHistoryPage from "../OrderHistoryPage/OrderHistoryPage";
+import DrumMachinePage from "../DrumMachine/DrumMachine";
 
 export default function App() {
   const [user, setUser] = useState(getUser());
-
-  // BPM set up
-  const baseBPMPerOneSecond = 60;
-  const stepsPerBar = 16;
-  const beatsPerBar = 4;
-  const barsPerSequence = 1;
-  const totalSteps = stepsPerBar * barsPerSequence;
-  const totalBeats = beatsPerBar * barsPerSequence;
-
-  // Hooks for drum machine
-  const [BPM, setBPM] = useState(90);
-  const [startTime, setStartTime] = useState(null);
-  const [pastLapsedTime, setPastLapse] = useState(0);
-  const [currentStepID, setCurrentStep] = useState(null);
-  const [getNotesAreaWidthInPixels] = useStyles(totalSteps);
-
-  const notesAreaWidthInPixels = getNotesAreaWidthInPixels(totalSteps);
-  const timePerSequence = (baseBPMPerOneSecond / BPM) * 1000 * totalBeats;
-  const timePerStep = timePerSequence / totalSteps;
-  const isSequencePlaying = startTime !== null;
-  const playerTime = useTimer(isSequencePlaying);
-  const lapsedTime = isSequencePlaying
-    ? Math.max(0, playerTime - startTime)
-    : 0;
-  const totalLapsedTime = pastLapsedTime + lapsedTime;
-
-  // Hooks for loop
-  const [allLoops, setAllLoops] = useState([]);
-  const [updated, setUpdated] = useState(false);
-  const [selectedLoop, setSelectedLoop] = useState(null);
-
-  useEffect(() => {
-    if (isSequencePlaying) {
-      setCurrentStep(Math.floor(totalLapsedTime / timePerStep) % totalSteps);
-    } else {
-      setCurrentStep(null);
-    }
-  }, [isSequencePlaying, timePerStep, totalLapsedTime, totalSteps]);
 
   // get loops
   // useEffect(
@@ -74,40 +26,12 @@ export default function App() {
   //   [updated]
   // );
 
-  function loopFinder(a) {
-    let r = allLoops.filter((loop) => loop._id === a);
-    console.log(allLoops);
-    console.log(r);
-    console.log(r[0].title);
-    return r[0].title;
-  }
-
-  const toolBarProps = {
-    setStartTime,
-    setPastLapse,
-    setBPM,
-    isSequencePlaying,
-    startTime,
-    BPM,
-    allLoops,
-    setAllLoops,
-  };
-
-  const playHeadProps = {
-    notesAreaWidthInPixels,
-    timePerSequence,
-    totalLapsedTime,
-  };
-
-  const trackListProps = {
-    currentStepID,
-  };
-
   return (
     <main className="App">
       {user ? (
         <>
           <NavBar user={user} setUser={setUser} />
+
           <Routes>
             {/* client-side route that renders the component instance if the path matches the url in the address bar */}
             <Route
@@ -120,6 +44,7 @@ export default function App() {
             />
             {/* redirect to /orders/new if path in address bar hasn't matched a <Route> above */}
             <Route path="/*" element={<Navigate to="/orders/new" />} />
+            <Route path="/drummachine" element={<DrumMachinePage />} />
           </Routes>
         </>
       ) : (

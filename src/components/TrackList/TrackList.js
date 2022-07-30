@@ -61,7 +61,7 @@ const TrackList = ({ currentStepID, setUpdated, allLoops }) => {
   return (
     <>
       <div className="track-list">{content}</div>
-      <form action="">
+      {/* <form action="">
         <input
           name="title"
           value={formData.title}
@@ -73,7 +73,7 @@ const TrackList = ({ currentStepID, setUpdated, allLoops }) => {
         <button type="submit" onClick={handleSubmit}>
           Save
         </button>
-      </form>
+      </form> */}
     </>
   );
 };
