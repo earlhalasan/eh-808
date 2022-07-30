@@ -1,4 +1,4 @@
-.NewOrderPage {
+.OrderHistoryPage {
   height: 100%;
   display: grid;
   grid-template-columns: 1.6fr 3.5fr 3fr;
@@ -7,14 +7,10 @@
   border-radius: 2vmin;
 }
 
-.NewOrderPage aside {
+.OrderHistoryPage aside {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   margin: 3vmin 2vmin;
-}
-
-.border {
-  border: 2px solid black;
 }

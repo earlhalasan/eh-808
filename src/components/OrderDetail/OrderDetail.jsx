@@ -26,7 +26,7 @@ export default function OrderDetail({
             ORDER <span className="smaller">{order.orderId}</span>
           </span>
         ) : (
-          <span>NEW ORDER</span>
+          <span>Cart</span>
         )}
         <span>{new Date(order.updatedAt).toLocaleDateString()}</span>
       </div>
@@ -43,7 +43,7 @@ export default function OrderDetail({
                   onClick={handleCheckout}
                   disabled={!lineItems.length}
                 >
-                  CHECKOUT
+                  Checkout
                 </button>
               )}
               <span>{order.totalQty}</span>
@@ -51,7 +51,7 @@ export default function OrderDetail({
             </section>
           </>
         ) : (
-          <div className="hungry">Hungry?</div>
+          <div className="hungry">Cart is empty</div>
         )}
       </div>
     </div>

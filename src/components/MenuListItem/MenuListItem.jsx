@@ -1,4 +1,5 @@
-// import "./MenuListItem.css";
+import "./MenuListItem.css";
+
 export default function MenuListItem({ menuItem, handleAddToOrder }) {
   return (
     <div className="MenuListItem">
@@ -10,7 +11,7 @@ export default function MenuListItem({ menuItem, handleAddToOrder }) {
           className="btn-sm"
           onClick={() => handleAddToOrder(menuItem._id)}
         >
-          ADD
+          Add to Cart
         </button>
       </div>
     </div>
