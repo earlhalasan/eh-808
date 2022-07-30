@@ -126,11 +126,15 @@ a.button {
   color: var(--white);
   background-color: #003049;
   font-size: 2vmin;
-  font-weight: bold;
+  font-weight: semibold;
   text-decoration: none;
   text-align: center;
+<<<<<<< HEAD
   border: 0.1vmin solid var(--tan-2);
   border-radius: 1px;
+=======
+  border-radius: 7px;
+>>>>>>> b5aa76cf8de4f444f760d38cc7b60e3ce6a0d743
   outline: none;
   cursor: pointer;
 }

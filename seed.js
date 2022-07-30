@@ -39,11 +39,19 @@ const Item = require("./models/item");
     {
       name: "CP CP221 Tunable Bongos",
       emoji: "🪘",
+<<<<<<< HEAD
       category: categories[0],
       price: 79.99,
       description: "Affordable price. Made of Asian hardwood. Traditional rims",
       image:
         "https://media.guitarcenter.com/is/image/MMGS7/440683000000000-00-720x720.jpg",
+=======
+      picture: "public/443120000645000-00-720x720.webp",
+      category: categories[0],
+      price: 3.95,
+      description:
+        "Smaller 6-3/4 and 8 natural rawhide heads. Kiln-dried Siam oak shells. Cuban-style steel bottoms",
+>>>>>>> b5aa76cf8de4f444f760d38cc7b60e3ce6a0d743
     },
     {
       name: "Fender American Professional II Telecaster",
