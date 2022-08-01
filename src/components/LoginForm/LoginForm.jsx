@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import * as usersService from "../../utilities/users-service";
 
 export default function LoginForm({ setUser }) {
@@ -29,7 +29,10 @@ export default function LoginForm({ setUser }) {
 
   return (
     <div>
-      <div className="form-container" onSubmit={handleSubmit}>
+      <div
+        className="w-96 bg-white p-5 rounded-lg content-center"
+        onSubmit={handleSubmit}
+      >
         <form autoComplete="off">
           <label>Email</label>
           <input
@@ -47,7 +50,12 @@ export default function LoginForm({ setUser }) {
             onChange={handleChange}
             required
           />
-          <button type="submit">LOG IN</button>
+          <button
+            type="submit"
+            className="rounded-lg font-semibold bg-[#fcbf49] hover:text-black bg-[#f77f00] duration-200"
+          >
+            Log In
+          </button>
         </form>
       </div>
       <p className="error-message">&nbsp;{error}</p>

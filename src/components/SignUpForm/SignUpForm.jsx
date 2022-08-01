@@ -78,8 +78,12 @@ export default class SignUpForm extends Component {
               onChange={this.handleChange}
               required
             />
-            <button type="submit" disabled={disable}>
-              SIGN UP
+            <button
+              type="submit"
+              disabled={disable}
+              className="rounded-lg font-semibold bg-[#fcbf49] hover:text-black bg-[#f77f00] duration-200"
+            >
+              Sign Up
             </button>
           </form>
         </div>
