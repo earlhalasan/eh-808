@@ -49,7 +49,7 @@ export default function OrderDetail({
                 <span className="text-lg">TOTAL&nbsp;&nbsp;</span>
               ) : (
                 <button
-                  className="btn-sm"
+                  className="btn-sm rounded-lg font-semibold hover:text-black hover:bg-[#fcbf49] duration-200"
                   onClick={handleCheckout}
                   disabled={!lineItems.length}
                 >

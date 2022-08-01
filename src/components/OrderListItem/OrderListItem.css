@@ -3,9 +3,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 3vmin;
+  margin-bottom: 13px;
   padding: 2vmin;
-  color: var(--text-light);
   background-color: var(--white);
   border: 0.1vmin solid var(--tan-3);
   border-radius: 1vmin;

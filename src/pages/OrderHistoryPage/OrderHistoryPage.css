@@ -3,7 +3,8 @@
   display: grid;
   grid-template-columns: 1.6fr 3.5fr 3fr;
   grid-template-rows: 1fr;
-  background-color: var(--white);
+  background-image: url("../../../public/luke-chesser-CxBx_J3yp9g-unsplash.jpg");
+  background-size: 100% 100%;
   border-radius: 2vmin;
 }
 
@@ -12,5 +13,5 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  margin: 3vmin 2vmin;
+  /* margin: 3vmin 2vmin; */
 }

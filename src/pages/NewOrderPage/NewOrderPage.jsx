@@ -73,7 +73,10 @@ export default function NewOrderPage({ user, setUser }) {
           setActiveCat={setActiveCat}
         />
         <div className="bg-white">
-          <Link to="/orders" className="button btn-sm bg-white">
+          <Link
+            to="/orders"
+            className="btn-sm rounded-lg font-semibold hover:text-black hover:bg-[#fcbf49] duration-200"
+          >
             Order History
           </Link>
         </div>

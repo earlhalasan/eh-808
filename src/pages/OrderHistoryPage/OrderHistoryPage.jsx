@@ -26,7 +26,7 @@ export default function OrderHistoryPage({ user, setUser }) {
 
   return (
     <main className="OrderHistoryPage pt-[4.3rem]">
-      <aside>
+      <aside className="bg-white border-[1px] mx-3 rounded-lg mb-3">
         {/* <Logo /> */}
         <Link to="/orders/new" className="button btn-sm">
           Back to Store

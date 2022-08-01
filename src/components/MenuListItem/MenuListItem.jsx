@@ -17,7 +17,7 @@ export default function MenuListItem({ menuItem, handleAddToOrder }) {
           <div className="buy text-center justify-end">
             <span>${menuItem.price.toFixed(2)}</span>
             <button
-              className="btn-sm"
+              className="btn-sm rounded-lg font-semibold hover:text-black hover:bg-[#fcbf49] duration-200"
               onClick={() => handleAddToOrder(menuItem._id)}
             >
               Add to Cart
