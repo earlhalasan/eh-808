@@ -4,7 +4,7 @@ import React from "react";
 
 export default function OrderList({ orders, activeOrder, handleActiveOrder }) {
   return (
-    <main className="OrderList">
+    <main className="">
       {orders.map((o) => (
         <OrderListItem
           order={o}

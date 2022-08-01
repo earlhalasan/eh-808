@@ -21,10 +21,10 @@ export default function OrderDetail({
 
   return (
     <div className=" mx-3 mb-3 p-3 rounded-lg bg-white">
-      <div className="flex justify-between items-center px-5 py-2 font-medium text-2xl bg-[#fcbf49] rounded-lg">
+      <div className="flex justify-between items-center px-5 py-2 font-medium text-2xl bg-[#fcbf49] rounded-lg text-center">
         {order.isPaid ? (
           <span>
-            Cart <span className="smaller">{order.orderId}</span>
+            Order: &nbsp; <span className="float-right">{order.orderId}</span>
           </span>
         ) : (
           <span>Cart</span>
@@ -46,7 +46,7 @@ export default function OrderDetail({
               </span>
               <br />
               {order.isPaid ? (
-                <span className="text-lg">TOTAL&nbsp;&nbsp;</span>
+                <span className="text-lg">&nbsp;&nbsp;</span>
               ) : (
                 <button
                   className="btn-sm rounded-lg font-semibold hover:text-black hover:bg-[#fcbf49] duration-200"

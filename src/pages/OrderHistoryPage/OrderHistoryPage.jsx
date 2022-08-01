@@ -25,13 +25,21 @@ export default function OrderHistoryPage({ user, setUser }) {
   }
 
   return (
-    <main className="OrderHistoryPage pt-[4.3rem]">
-      <aside className="bg-white border-[1px] mx-3 rounded-lg mb-3">
+    <main className="OrderHistoryPage pt-[4.3rem] w-screen h-screen">
+      <aside className="bg-white border-[1px] mx-3 rounded-lg mb-3 flex">
+        <div className="justify-between items-center px-5 py-2 m-2 font-medium text-2xl bg-[#fcbf49] rounded-lg object-fill">
+          Order History
+        </div>
         {/* <Logo /> */}
-        <Link to="/orders/new" className="button btn-sm">
-          Back to Store
-        </Link>
-        <UserLogOut user={user} setUser={setUser} />
+        <div className="pt-5 px-2">
+          <Link
+            to="/orders/new"
+            className="py-3 px-5 rounded-lg font-semibold hover:text-black hover:bg-[#fcbf49] duration-200 bg-[#003049] text-white"
+          >
+            Back to Store
+          </Link>
+        </div>
+        {/* <UserLogOut user={user} setUser={setUser} /> */}
       </aside>
       <OrderList
         orders={orders}

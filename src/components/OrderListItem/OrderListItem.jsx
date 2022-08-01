@@ -15,11 +15,11 @@ export default function OrderListItem({
     >
       <div>
         <div>
-          Order Id: <span className="smaller">{order.orderId}</span>
+          Order: <span className="">{order.orderId}</span>
         </div>
-        <div className="smaller">
+        {/* <div className="smaller">
           {new Date(order.createdAt).toLocaleDateString()}
-        </div>
+        </div> */}
       </div>
       <div className="align-rt">
         <div>${order.orderTotal.toFixed(2)}</div>

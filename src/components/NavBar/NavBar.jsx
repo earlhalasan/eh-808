@@ -16,22 +16,22 @@ export default function NavBar({ user, setUser }) {
     <>
       <div className="navbar pb-3 pt-2 bg-[#003049] text-white font-medium text-lg rounded-b-lg">
         <nav>
-          <span className="text-4xl float-left pl-8 font-bold underline underline-offset-0 ">
+          <span className="text-4xl float-left px-8 font-bold underline rounded-lg">
             MusicSupply
           </span>
           <div className="pt-2 float-right pr-8">
             Welcome, {user.name}
             &nbsp; &nbsp;
-            <span className="hover:bg-[#D62828] rounded-md p-3 duration-200">
+            <span className="hover:bg-[#F77F00] rounded-md p-3 duration-200">
               <Link to="/orders/new">Shop</Link>
             </span>
-            <span className="hover:bg-[#D62828] rounded-md p-3 duration-200">
+            <span className="hover:bg-[#F77F00] rounded-md p-3 duration-200">
               <Link to="/orders">Order History</Link>
             </span>
-            <span className="hover:bg-[#D62828] rounded-md p-3 duration-200">
+            <span className="hover:bg-[#F77F00] rounded-md p-3 duration-200">
               <Link to="/drummachine">Drum Machine</Link>
             </span>
-            <span className="hover:bg-[#D62828] rounded-md p-3 duration-200">
+            <span className="hover:bg-[#F77F00] rounded-md p-3 duration-200">
               <Link to="" onClick={handleLogOut}>
                 Log Out
               </Link>

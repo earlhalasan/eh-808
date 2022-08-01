@@ -11,7 +11,7 @@
 .OrderHistoryPage aside {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
+  /* justify-content: space-between; */
+  /* align-items: start; */
   /* margin: 3vmin 2vmin; */
 }

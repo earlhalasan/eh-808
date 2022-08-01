@@ -20,7 +20,7 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
       >
         {!isPaid && (
           <button
-            className="btn-xs"
+            className="rounded-lg text-xs hover:text-black hover:bg-[#fcbf49] duration-200"
             onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
           >
             −
@@ -29,7 +29,7 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
         <span>{lineItem.qty}</span>
         {!isPaid && (
           <button
-            className="btn-xs"
+            className="rounded-lg text-xs hover:text-black hover:bg-[#fcbf49] duration-200"
             onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty + 1)}
           >
             +
