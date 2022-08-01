@@ -64,23 +64,29 @@ export default function NewOrderPage({ user, setUser }) {
   }
 
   return (
-    <main className="NewOrderPage">
-      <aside className="border-[1px] mx-3 rounded-md">
+    <main className="NewOrderPage pt-[4.3rem] overflow-auto w-screen h-screen">
+      <aside className="border-[1px] mx-3 rounded-lg bg-white mb-3">
         {/* <Logo /> */}
         <CategoryList
           categories={categoriesRef.current}
           activeCat={activeCat}
           setActiveCat={setActiveCat}
         />
-        <Link to="/orders" className="button btn-sm">
-          Order History
-        </Link>
+        <div className="bg-white">
+          <Link to="/orders" className="button btn-sm bg-white">
+            Order History
+          </Link>
+        </div>
         <UserLogOut user={user} setUser={setUser} />
       </aside>
-      <MenuList
-        menuItems={menuItems.filter((item) => item.category.name === activeCat)}
-        handleAddToOrder={handleAddToOrder}
-      />
+      <div className="overflow-auto">
+        <MenuList
+          menuItems={menuItems.filter(
+            (item) => item.category.name === activeCat
+          )}
+          handleAddToOrder={handleAddToOrder}
+        />
+      </div>
       <OrderDetail
         order={cart}
         handleChangeQty={handleChangeQty}

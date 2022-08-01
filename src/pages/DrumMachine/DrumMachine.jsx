@@ -62,7 +62,7 @@ export default function DrumMachinePage() {
 
   return (
     <Provider>
-      <main className="app">
+      <main className="app pt-[4.3rem]">
         <header className="app_header">
           <h1 className="app_title">EH-808</h1>
           <ToolBar

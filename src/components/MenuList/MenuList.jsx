@@ -1,5 +1,6 @@
 // import './MenuList.css';
 import MenuListItem from "../MenuListItem/MenuListItem";
+import React from "react";
 
 export default function MenuList({ menuItems, handleAddToOrder }) {
   const items = menuItems.map((item) => (
@@ -9,5 +10,11 @@ export default function MenuList({ menuItems, handleAddToOrder }) {
       handleAddToOrder={handleAddToOrder}
     />
   ));
-  return <main className="MenuList">{items}</main>;
+  return (
+    <>
+      <div className="">
+        <main className="MenuList ">{items}</main>
+      </div>
+    </>
+  );
 }

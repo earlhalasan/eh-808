@@ -5,6 +5,8 @@
   grid-template-rows: 1fr;
   background-color: var(--white);
   border-radius: 2vmin;
+  background-image: url("../../../public/luke-chesser-CxBx_J3yp9g-unsplash.jpg");
+  background-size: 100% 100%;
 }
 
 .NewOrderPage aside {

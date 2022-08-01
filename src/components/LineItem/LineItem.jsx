@@ -1,4 +1,5 @@
 // import './LineItem.css';
+import React from "react";
 
 export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
   return (

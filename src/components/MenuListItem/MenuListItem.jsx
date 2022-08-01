@@ -1,4 +1,5 @@
 import "./MenuListItem.css";
+import React from "react";
 
 export default function MenuListItem({ menuItem, handleAddToOrder }) {
   return (

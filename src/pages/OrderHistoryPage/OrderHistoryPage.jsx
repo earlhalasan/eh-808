@@ -5,7 +5,7 @@ import UserLogOut from "../../components/UserLogOut/UserLogOut";
 import OrderDetail from "../../components/OrderDetail/OrderDetail";
 import OrderList from "../../components/OrderList/OrderList";
 import * as ordersAPI from "../../utilities/orders-api";
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 
 export default function OrderHistoryPage({ user, setUser }) {
   const [orders, setOrders] = useState([]);
@@ -25,7 +25,7 @@ export default function OrderHistoryPage({ user, setUser }) {
   }
 
   return (
-    <main className="OrderHistoryPage">
+    <main className="OrderHistoryPage pt-[4.3rem]">
       <aside>
         {/* <Logo /> */}
         <Link to="/orders/new" className="button btn-sm">

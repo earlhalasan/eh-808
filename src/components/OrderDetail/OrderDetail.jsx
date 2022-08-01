@@ -1,5 +1,6 @@
 // import './OrderDetail.css';
 import LineItem from "../LineItem/LineItem";
+import React from "react";
 
 // Used to display the details of any order, including the cart (unpaid order)
 export default function OrderDetail({
@@ -19,7 +20,7 @@ export default function OrderDetail({
   ));
 
   return (
-    <div className="border-[1px] mx-2 p-3 rounded-lg">
+    <div className=" mx-3 mb-3 p-3 rounded-lg bg-white">
       <div className="flex justify-between items-center px-5 py-2 font-medium text-2xl bg-[#fcbf49] rounded-lg">
         {order.isPaid ? (
           <span>
