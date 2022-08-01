@@ -62,7 +62,7 @@ export default function DrumMachinePage() {
 
   return (
     <>
-      <div className="text-white pt-5">
+      <div className="text-white py-5">
         <Provider>
           <main className="app pt-[4.3rem]">
             <header className="app_header">
