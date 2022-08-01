@@ -5,6 +5,7 @@ import Steps from "../../components/Steps/Steps";
 import TrackList from "../../components/TrackList/TrackList";
 import useStyles from "../../hooks/useStyles";
 import useTimer from "../../hooks/useTimer";
+import "./DrumMachine.css";
 
 export default function DrumMachinePage() {
   // BPM set up
@@ -62,29 +63,31 @@ export default function DrumMachinePage() {
 
   return (
     <>
-      <div className="text-white py-5">
-        <Provider>
-          <main className="app pt-[4.3rem]">
-            <header className="app_header">
-              <h1 className="app_title text-3xl pb-3 font-bold">EH-808</h1>
-              <ToolBar
-                {...toolBarProps}
-                setAllLoops={setAllLoops}
-                setSelectedLoop={setSelectedLoop}
-              />
-            </header>
-            <Steps count={totalSteps} />
-            <div className="app_content">
-              <TrackList
-                {...trackListProps}
-                setUpdated={setUpdated}
-                allLoops={allLoops}
-                setAllLoops={setAllLoops}
-                setSelectedLoop={setSelectedLoop}
-              />
-            </div>
-          </main>
-        </Provider>
+      <div className="flex flex-row min-h-screen justify-center items-start pt-20">
+        <div className="text-white pb-8 w-[900px] rounded-xl" id="transparent">
+          <Provider>
+            <main className="app pt-4">
+              <header className="app_header">
+                <h1 className="app_title text-3xl pb-3 font-bold">EH-808</h1>
+                <ToolBar
+                  {...toolBarProps}
+                  setAllLoops={setAllLoops}
+                  setSelectedLoop={setSelectedLoop}
+                />
+              </header>
+              <Steps count={totalSteps} />
+              <div className="app_content">
+                <TrackList
+                  {...trackListProps}
+                  setUpdated={setUpdated}
+                  allLoops={allLoops}
+                  setAllLoops={setAllLoops}
+                  setSelectedLoop={setSelectedLoop}
+                />
+              </div>
+            </main>
+          </Provider>
+        </div>
       </div>
     </>
   );

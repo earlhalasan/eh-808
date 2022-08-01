@@ -16,7 +16,7 @@ export default function NavBar({ user, setUser }) {
     <>
       <div className="navbar pb-3 pt-2 bg-[#003049] text-white font-medium text-lg rounded-b-lg">
         <nav>
-          <span className="text-4xl float-left px-8 font-bold underline rounded-lg">
+          <span className="text-4xl float-left px-8 font-bold underline rounded-lg tracking-tighter">
             MusicSupply
           </span>
           <div className="pt-2 float-right pr-8">
