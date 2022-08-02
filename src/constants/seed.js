@@ -1,39 +1,49 @@
 const sequenceList = [
   {
     id: 0,
-    title: "House (120-128 BPM)",
+    title: "Drums",
     noteCount: 16,
     trackList: [
       {
         title: "Kick",
         soundFile: "kick",
-        onNotes: [0, 4, 8, 12],
+        onNotes: [0, 3, 6, 9, 12, 15],
+      },
+      {
+        title: "808",
+        soundFile: "bass",
+        onNotes: [],
       },
       {
         title: "Snare",
         soundFile: "snare",
-        onNotes: [4, 12],
+        onNotes: [],
       },
       {
-        title: "Open Hat",
-        soundFile: "hh_open",
-        onNotes: [],
+        title: "Clap",
+        soundFile: "clap",
+        onNotes: [4, 12],
       },
       {
         title: "Closed Hat",
         soundFile: "hh_closed",
-        onNotes: [2, 6, 10, 14],
+        onNotes: [],
       },
       {
-        title: "Tom",
-        soundFile: "tom",
+        title: "Blip 1",
+        soundFile: "blip1",
+        onNotes: [],
+      },
+      {
+        title: "Blip 2",
+        soundFile: "blip2",
         onNotes: [],
       },
     ],
   },
   {
     id: 1,
-    title: "Reggaeton (90-98 BPM)",
+    title: "Reggaeton",
     noteCount: 16,
     trackList: [
       {
@@ -42,68 +52,71 @@ const sequenceList = [
         onNotes: [0, 4, 8, 12],
       },
       {
-        title: "Snare",
-        soundFile: "snare",
-        onNotes: [3, 6, 9, 11, 14],
+        title: "808",
+        soundFile: "bass",
+        onNotes: [],
       },
       {
-        title: "Open Hat",
-        soundFile: "hh_open",
+        title: "Snare",
+        soundFile: "snare",
+        onNotes: [3, 6, 11, 14],
+      },
+      {
+        title: "Clap",
+        soundFile: "clap",
         onNotes: [],
       },
       {
         title: "Closed Hat",
         soundFile: "hh_closed",
-        onNotes: [0, 2, 4, 6, 7, 10, 12, 14],
+        onNotes: [],
       },
       {
-        title: "Tom",
-        soundFile: "tom",
+        title: "Blip 1",
+        soundFile: "blip1",
+        onNotes: [],
+      },
+      {
+        title: "Blip 2",
+        soundFile: "blip2",
+        onNotes: [],
+      },
+      {
+        title: "Vox 1",
+        soundFile: "vox1",
+        onNotes: [],
+      },
+      {
+        title: "Vox 2",
+        soundFile: "vox2",
+        onNotes: [],
+      },
+      {
+        title: "Vox 3",
+        soundFile: "vox3",
+        onNotes: [],
+      },
+      {
+        title: "Vox 4",
+        soundFile: "vox4",
         onNotes: [],
       },
     ],
   },
   {
     id: 2,
-    title: "Hip-Hop (65-75 BPM)",
+    title: "Mustard",
     noteCount: 16,
     trackList: [
       {
         title: "Kick",
         soundFile: "kick",
-        onNotes: [0, 2, 7, 9, 10, 13, 15],
+        onNotes: [0, 5, 8, 11, 13],
       },
       {
-        title: "Snare",
-        soundFile: "snare",
-        onNotes: [4, 12],
-      },
-      {
-        title: "Open Hat",
-        soundFile: "hh_open",
+        title: "808",
+        soundFile: "bass",
         onNotes: [],
-      },
-      {
-        title: "Closed Hat",
-        soundFile: "hh_closed",
-        onNotes: [0, 2, 4, 6, 8, 10, 12, 14],
-      },
-      {
-        title: "Tom",
-        soundFile: "tom",
-        onNotes: [],
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: "Drum and Bass (88-90 BPM)",
-    noteCount: 16,
-    trackList: [
-      {
-        title: "Kick",
-        soundFile: "kick",
-        onNotes: [0, 5, 9, 11, 13],
       },
       {
         title: "Snare",
@@ -111,18 +124,125 @@ const sequenceList = [
         onNotes: [2, 6, 10, 14],
       },
       {
-        title: "Open Hat",
-        soundFile: "hh_open",
+        title: "Clap",
+        soundFile: "clap",
         onNotes: [],
       },
       {
         title: "Closed Hat",
         soundFile: "hh_closed",
-        onNotes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+        onNotes: [],
       },
       {
-        title: "Tom",
-        soundFile: "tom",
+        title: "Piano 1",
+        soundFile: "piano1",
+        onNotes: [],
+      },
+      {
+        title: "Piano 2",
+        soundFile: "piano2",
+        onNotes: [],
+      },
+      {
+        title: "Piano 3",
+        soundFile: "piano3",
+        onNotes: [],
+      },
+      {
+        title: "Piano 4",
+        soundFile: "piano4",
+        onNotes: [],
+      },
+      {
+        title: "Piano 5",
+        soundFile: "piano5",
+        onNotes: [],
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: "Full Kit",
+    noteCount: 16,
+    trackList: [
+      {
+        title: "Kick",
+        soundFile: "kick",
+        onNotes: [0, 4, 8, 12],
+      },
+      {
+        title: "808",
+        soundFile: "bass",
+        onNotes: [],
+      },
+      {
+        title: "Snare",
+        soundFile: "snare",
+        onNotes: [],
+      },
+      {
+        title: "Clap",
+        soundFile: "clap",
+        onNotes: [4, 12],
+      },
+      {
+        title: "Closed Hat",
+        soundFile: "hh_closed",
+        onNotes: [],
+      },
+      {
+        title: "Blip 1",
+        soundFile: "blip1",
+        onNotes: [],
+      },
+      {
+        title: "Blip 2",
+        soundFile: "blip2",
+        onNotes: [],
+      },
+      {
+        title: "Vox 1",
+        soundFile: "vox1",
+        onNotes: [],
+      },
+      {
+        title: "Vox 2",
+        soundFile: "vox2",
+        onNotes: [],
+      },
+      {
+        title: "Vox 3",
+        soundFile: "vox3",
+        onNotes: [],
+      },
+      {
+        title: "Vox 4",
+        soundFile: "vox4",
+        onNotes: [],
+      },
+      {
+        title: "Piano 1",
+        soundFile: "piano1",
+        onNotes: [],
+      },
+      {
+        title: "Piano 2",
+        soundFile: "piano2",
+        onNotes: [],
+      },
+      {
+        title: "Piano 3",
+        soundFile: "piano3",
+        onNotes: [],
+      },
+      {
+        title: "Piano 4",
+        soundFile: "piano4",
+        onNotes: [],
+      },
+      {
+        title: "Piano 5",
+        soundFile: "piano5",
         onNotes: [],
       },
     ],
@@ -131,9 +251,21 @@ const sequenceList = [
 
 const soundFiles = {
   kick: "/sounds/kick.wav",
+  bass: "/sounds/808.wav",
   snare: "/sounds/snare.wav",
-  hh_open: "/sounds/hh_open.wav",
-  hh_closed: "/sounds/hh_closed.wav",
+  clap: "/sounds/clap.wav",
+  hh_closed: "/sounds/hat.wav",
+  blip1: "/sounds/blip1.wav",
+  blip2: "/sounds/blip2.wav",
+  vox1: "/sounds/vox1.wav",
+  vox2: "/sounds/vox2.wav",
+  vox3: "/sounds/vox3.wav",
+  vox4: "/sounds/vox4.wav",
+  piano1: "/sounds/piano1.wav",
+  piano2: "/sounds/piano2.wav",
+  piano3: "/sounds/piano3.wav",
+  piano4: "/sounds/piano4.wav",
+  piano5: "/sounds/piano5.wav",
 };
 
 export { sequenceList, soundFiles };
