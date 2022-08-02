@@ -15,7 +15,8 @@ export default function OrderListItem({
     >
       <div>
         <div>
-          Order: <span className="">{order.orderId}</span>
+          <span className="font-semibold text-xl">Order:</span>{" "}
+          <span className="font-semibold">{order.orderId}</span>
         </div>
         {/* <div className="smaller">
           {new Date(order.createdAt).toLocaleDateString()}

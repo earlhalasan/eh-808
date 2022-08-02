@@ -38,6 +38,7 @@ export default function DrumMachinePage() {
   const [, setUpdated] = useState(false);
   const [, setSelectedLoop] = useState(null);
 
+  // Sets the current step to current step in the sequence
   useEffect(() => {
     if (isSequencePlaying) {
       setCurrentStep(Math.floor(totalLapsedTime / timePerStep) % totalSteps);

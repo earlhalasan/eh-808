@@ -14,7 +14,7 @@ One stop shop for all your music and home studio needs. This is a webstore where
 - Users will be able to browse through different categories of instruments, add them to their cart, adjust quantities, delete items from cart, and then checkout.
 - Users will be able to try out a virtual 808 drum machine.
 
-## Wireframes:
+## Images:
 
 <img src="https://i.imgur.com/U2kPmfY.png">
 
