@@ -29,7 +29,7 @@ One stop shop for all your music and home studio needs. This is a webstore where
 ## Technologies Used:
 
 - JavaScript
-- Css
+- CSS
 - Mongodb
 - Node.js
 - Express
