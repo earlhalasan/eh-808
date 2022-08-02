@@ -1,3 +1,1 @@
-# EH-808
-
-A drum machine.
+<img src="https://i.imgur.com/lkDjAg5.png">
