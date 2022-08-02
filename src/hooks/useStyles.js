@@ -14,7 +14,7 @@ const defaults = {
   __grid_unit: 2,
   __play_head_width: 2,
   __form_element_height: 30,
-  __input_bpm_width: 45,
+  __input_bpm_width: 60,
   __step_height: 32,
   __track_title_width: 120,
   __note_width: 32,

@@ -23,7 +23,8 @@ export default function LineItem({ lineItem, isPaid, handleChangeQty }) {
             className="rounded-lg text-xs hover:text-black hover:bg-[#fcbf49] duration-200"
             onClick={() => handleChangeQty(lineItem.item._id, lineItem.qty - 1)}
           >
-            −
+            {/* if quantity is 1 display remove */}
+            {lineItem.qty === 1 ? "Remove" : "-"}
           </button>
         )}
         <span>{lineItem.qty}</span>

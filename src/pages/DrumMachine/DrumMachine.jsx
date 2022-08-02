@@ -17,7 +17,7 @@ export default function DrumMachinePage() {
   const totalBeats = beatsPerBar * barsPerSequence;
 
   // Hooks for drum machine
-  const [BPM, setBPM] = useState(90);
+  const [BPM, setBPM] = useState(93);
   const [startTime, setStartTime] = useState(null);
   const [pastLapsedTime, setPastLapse] = useState(0);
   const [currentStepID, setCurrentStep] = useState(null);
@@ -63,10 +63,10 @@ export default function DrumMachinePage() {
 
   return (
     <>
-      <div className="flex flex-row min-h-screen justify-center items-start pt-20">
+      <div className="flex flex-row min-h-screen justify-center items-start pt-16">
         <div className="text-white pb-8 w-[900px] rounded-xl" id="transparent">
           <Provider>
-            <main className="app pt-4">
+            <main className="app pt-2">
               <header className="app_header">
                 <h1 className="app_title text-3xl pb-3 font-bold">EH-808</h1>
                 <ToolBar
