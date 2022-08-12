@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import Sound from "../utilities/Sound";
 
+// sets the sound to play
 const useSound = (soundFilePath) => {
   const [sound, setSound] = useState({ play: () => {} });
   const play = useCallback(() => sound.play(), [sound]);

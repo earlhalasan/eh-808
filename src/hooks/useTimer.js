@@ -1,5 +1,6 @@
 import { useState, useLayoutEffect } from "react";
 
+// uses request animation frame to visualize bpm along steps
 const useTimer = (running) => {
   const [now, setNow] = useState(null);
 
